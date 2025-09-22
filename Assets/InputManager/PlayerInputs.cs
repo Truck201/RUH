@@ -153,6 +153,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Entregar"",
+                    ""type"": ""Button"",
+                    ""id"": ""94284d38-9537-48ef-a5fc-f0006fd6788c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -417,6 +426,39 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Vaccum"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6371aa5d-a6e2-4e87-b0fb-708d925ac54a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Entregar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0f4c529-7298-46a7-8065-c90c58499355"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Entregar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb6bfa8f-57cb-4795-bde5-8dfa797fcc28"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Entregar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -812,6 +854,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay_Scroll = m_Gameplay.FindAction("Scroll", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Vaccum = m_Gameplay.FindAction("Vaccum", throwIfNotFound: true);
+        m_Gameplay_Entregar = m_Gameplay.FindAction("Entregar", throwIfNotFound: true);
         // PauseMenu
         m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
         m_PauseMenu_Move = m_PauseMenu.FindAction("Move", throwIfNotFound: true);
@@ -911,6 +954,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Scroll;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Vaccum;
+    private readonly InputAction m_Gameplay_Entregar;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -950,6 +994,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Vaccum".
         /// </summary>
         public InputAction @Vaccum => m_Wrapper.m_Gameplay_Vaccum;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Entregar".
+        /// </summary>
+        public InputAction @Entregar => m_Wrapper.m_Gameplay_Entregar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -997,6 +1045,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Vaccum.started += instance.OnVaccum;
             @Vaccum.performed += instance.OnVaccum;
             @Vaccum.canceled += instance.OnVaccum;
+            @Entregar.started += instance.OnEntregar;
+            @Entregar.performed += instance.OnEntregar;
+            @Entregar.canceled += instance.OnEntregar;
         }
 
         /// <summary>
@@ -1029,6 +1080,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Vaccum.started -= instance.OnVaccum;
             @Vaccum.performed -= instance.OnVaccum;
             @Vaccum.canceled -= instance.OnVaccum;
+            @Entregar.started -= instance.OnEntregar;
+            @Entregar.performed -= instance.OnEntregar;
+            @Entregar.canceled -= instance.OnEntregar;
         }
 
         /// <summary>
@@ -1354,6 +1408,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnVaccum(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Entregar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEntregar(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PauseMenu" which allows adding and removing callbacks.

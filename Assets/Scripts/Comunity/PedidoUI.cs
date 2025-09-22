@@ -17,7 +17,7 @@ public class PedidoUI : MonoBehaviour
 
     [Header("Interacción")]
     public Button entregarButton;
-    public float interactRadius = 2f; // radio de proximidad
+    public float interactRadius = 4f; // radio de proximidad
     private GameObject player;
 
     private ComunityDeliver.DeliverLevel currentPedido;
@@ -27,10 +27,10 @@ public class PedidoUI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (entregarButton != null)
+        var entregaUI = GetComponentInChildren<EntregaButtonUI>();
+        if (entregaUI != null)
         {
-            entregarButton.gameObject.SetActive(false); // ocultamos botón al inicio
-            entregarButton.onClick.AddListener(TryEntregarPedido);
+            entregaUI.SetPedidoUI(this);
         }
     }
 
@@ -41,7 +41,7 @@ public class PedidoUI : MonoBehaviour
         // 🔹 Verificamos proximidad
         float dist = Vector3.Distance(player.transform.position, transform.position);
         entregarButton.gameObject.SetActive(dist <= interactRadius);
-
+        // Debug.Log($"Distancia -> {dist} || Radio interact -> {interactRadius}");
     }
     public void SetPedido(ComunityDeliver.DeliverLevel pedido, int nivel)
     {
@@ -96,8 +96,7 @@ public class PedidoUI : MonoBehaviour
         }
     }
 
-
-    private void TryEntregarPedido()
+    public void TryEntregarPedido()
     {
         // 🔹 Chequeamos si hay suficientes ingredientes
         if (PlayerStats.Instance.PuedeCompletarPedido(currentPedido))
