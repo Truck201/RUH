@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Enemy
+  - Stairs
+  - Veggies
+  - PatrolSpots
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Stones
+  - Water
+  - UI
+  - Enemy
+  - Player
+  - Stairs
+  - Veggies
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Stones
+    uniqueID: 335482231
+    locked: 0
+  - name: Monster
+    uniqueID: 3733476515
+    locked: 0
+  - name: Player
+    uniqueID: 975436607
+    locked: 0
+  - name: Vegetables
+    uniqueID: 4062097245
+    locked: 0
+  - name: Inventory
+    uniqueID: 21866011
+    locked: 0
+  - name: Stairs
+    uniqueID: 3951513399
+    locked: 0
+  - name: UI
+    uniqueID: 3538130015
+    locked: 0
+  m_RenderingLayers:
+  - Default

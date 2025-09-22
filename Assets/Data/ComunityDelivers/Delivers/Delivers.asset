@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af4f5229c9a1a04b91c9c98909b940e, type: 3}
+  m_Name: Delivers
+  m_EditorClassIdentifier: 
+  niveles:
+  - pedidos:
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 3
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 3
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 4
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 4
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+  - pedidos:
+    - zanahorias: 6
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+    - zanahorias: 5
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+    - zanahorias: 5
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+    - zanahorias: 4
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+    - zanahorias: 4
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+    - zanahorias: 7
+      papas: 0
+      cebollas: 0
+      experiencia: 20
+  - pedidos:
+    - zanahorias: 8
+      papas: 2
+      cebollas: 0
+      experiencia: 40
+    - zanahorias: 7
+      papas: 3
+      cebollas: 0
+      experiencia: 40
+    - zanahorias: 8
+      papas: 2
+      cebollas: 0
+      experiencia: 40
+    - zanahorias: 9
+      papas: 4
+      cebollas: 0
+      experiencia: 40
+    - zanahorias: 8
+      papas: 4
+      cebollas: 0
+      experiencia: 40
+    - zanahorias: 8
+      papas: 3
+      cebollas: 0
+      experiencia: 40
+  - pedidos:
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+  - pedidos:
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+    - zanahorias: 0
+      papas: 0
+      cebollas: 0
+      experiencia: 0
+  - pedidos:
+    - zanahorias: 12
+      papas: 12
+      cebollas: 4
+      experiencia: 40
+    - zanahorias: 15
+      papas: 10
+      cebollas: 5
+      experiencia: 40
+    - zanahorias: 20
+      papas: 15
+      cebollas: 3
+      experiencia: 70
+    - zanahorias: 15
+      papas: 10
+      cebollas: 5
+      experiencia: 40
+    - zanahorias: 17
+      papas: 12
+      cebollas: 5
+      experiencia: 40
+    - zanahorias: 16
+      papas: 13
+      cebollas: 3
+      experiencia: 40
