@@ -10,9 +10,10 @@ public class AmmoSlot
 
     [Header("Sprites por cantidad")]
     public Sprite spriteEmpty;
-    public Sprite sprite1;
-    public Sprite sprite3;
-    public Sprite sprite5;
+    public Sprite spriteCount1;
+    public Sprite spriteCount3;
+    public Sprite spriteCount5;
+    public Sprite spriteCount8;
 
     public void Clear()
     {
@@ -31,9 +32,10 @@ public class AmmoSlot
     public Sprite GetSpriteForCount()
     {
         if (count <= 0) return spriteEmpty;
-        if (count >= 5) return sprite5;
-        if (count >= 3) return sprite3;
-        if (count >= 1) return sprite1;
+        if (count >= 8) return spriteCount8;
+        if (count >= 5) return spriteCount5;
+        if (count >= 3) return spriteCount3;
+        if (count >= 1) return spriteCount1;
         return spriteEmpty;
     }
 }

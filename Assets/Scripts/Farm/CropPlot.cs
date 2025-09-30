@@ -13,12 +13,12 @@ public class CropPlot : MonoBehaviour
         StoneProjectile projectile = collision.GetComponent<StoneProjectile>();
         if (projectile != null && projectile.isProyectible)
         {
-            CollectibleStone stoneData = projectile.GetComponent<CollectibleStone>();
-            if (stoneData != null && stoneData.slotIndex >= 0 && stoneData.slotIndex < stoneSprites.Length)
+            Collectible stoneData = projectile.GetComponent<Collectible>();
+            if (stoneData != null) // && stoneData.slotIndex >= 0 && stoneData.slotIndex < stoneSprites.Length
             {
                 // Cambiar un slot aleatorio del cultivo
                 int slotToChange = Random.Range(0, cropSlots.Length);
-                cropSlots[slotToChange].sprite = stoneSprites[stoneData.slotIndex];
+                //cropSlots[slotToChange].sprite = stoneSprites[stoneData.slotIndex];
             }
 
             Destroy(collision.gameObject);

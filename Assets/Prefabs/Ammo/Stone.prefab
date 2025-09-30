@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6908865171592272972}
   - component: {fileID: 5997993095744721824}
   - component: {fileID: 7262019215351589537}
-  - component: {fileID: 4783499385416046045}
+  - component: {fileID: 4190121421660262147}
   m_Layer: 3
   m_Name: Stone
   m_TagString: Untagged
@@ -182,7 +182,7 @@ MonoBehaviour:
   isProyectible: 0
   deceleration: 2
   stopThreshold: 0.05
---- !u!114 &4783499385416046045
+--- !u!114 &4190121421660262147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,10 +191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7658383522428676387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a627474f869ce124f8136d00cbfed64a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b0289dfdf20a124eac41136226badc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneName: Roca
-  stoneIcon: {fileID: -8843831675877593866, guid: 1507234a97996c8469425bf193b8783a, type: 3}
+  type: 0
+  itemName: Stone
+  itemIcon: {fileID: -8843831675877593866, guid: 1507234a97996c8469425bf193b8783a, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}
-  slotIndex: 0

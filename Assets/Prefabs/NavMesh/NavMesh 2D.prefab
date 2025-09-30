@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5076902298935148741
 Transform:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 6337e227cb3a8314bbfba3cdc530760a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7df21ab1d215bb74b84dce53fe1654f5, type: 2}
 --- !u!114 &7180141857729903267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2618238474957786702
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 33c78290b3a7b3c469955162128438cd, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 98304888c59d5f4449118c8601f61821, type: 2}
 --- !u!114 &2913622240013243456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5980912682373911885
 Transform:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 95e42f45243bc9f4982777f1d511a195, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: cf3184b4b645aa64ba7393256f9b9d72, type: 2}
 --- !u!114 &2018690480092616315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: dce96dd89d9ff904588cd20c3678dcbc, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5f43d0fe8d9403f44b0bead2ffdc0686, type: 2}
 --- !u!114 &2707635273599308547
 MonoBehaviour:
   m_ObjectHideFlags: 0

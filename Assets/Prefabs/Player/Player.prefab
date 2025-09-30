@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 2
   m_Sprite: {fileID: -144335857, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.08627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.03137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,11 +109,10 @@ MonoBehaviour:
     m_Bits: 8
   suctionForce: 4
   playerManager: {fileID: 553357581542627541}
-  toolScroller: {fileID: 0}
-  stoneProjectilePrefab: {fileID: 7658383522428676387, guid: 1271bdf1016a6d84a974292fff05c208, type: 3}
+  collectibleManager: {fileID: 0}
   shootForce: 10
   projectileLifetime: 2
-  stoneCount: 0
+  playerAnims: {fileID: 1023232877317549403}
 --- !u!61 &2625285488050494238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +147,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.29999995, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.2, y: 0.5}
@@ -158,7 +157,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1.3, y: 0.7}
   m_EdgeRadius: 0
 --- !u!1 &2692892744078196844
 GameObject:
@@ -243,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 975436607
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1314191933345601279, guid: 8d4b555031e37a34e967cb7c4eeadd05, type: 3}
+  m_Sprite: {fileID: 1059876215649810054, guid: 071ffa0b45e821540a8e5eaa8b14d642, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -314,7 +313,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3913044, y: 1.3478261}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1.1111112}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -352,7 +351,7 @@ Animator:
   m_GameObject: {fileID: 2692892744078196844}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df416f5540a1ac4478720386ce1cadfa, type: 2}
+  m_Controller: {fileID: 22100000, guid: faf5234114fd0ff43a8bd3a2c5048cc0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -402,7 +401,7 @@ GameObject:
   - component: {fileID: 3709088509377857045}
   - component: {fileID: 5811038837475504777}
   m_Layer: 7
-  m_Name: Player
+  m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,7 +416,7 @@ Transform:
   m_GameObject: {fileID: 2715253955264426902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.35, z: 0}
+  m_LocalPosition: {x: 0.055, y: -0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -467,8 +466,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1010605625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 7054332665124787112, guid: 4890bc33b1715184f82094318626b4b9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

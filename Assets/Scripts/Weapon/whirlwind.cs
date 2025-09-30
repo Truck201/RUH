@@ -11,11 +11,13 @@ public class WhirlwindWeapon : MonoBehaviour
     public float suctionForce = 5f;
 
     [SerializeField] PlayerMovement playerManager;
-    [SerializeField] ToolScroller toolScroller;
+    [SerializeField] CollectibleManager collectibleManager;
 
     [Header("Attack Settings")]
     public float shootForce = 10f;
     public float projectileLifetime = 2f;
+
+    [SerializeField] Animator playerAnims;
 
     private PlayerInputs playerInputs;
     private bool isVacuuming = false;
@@ -68,60 +70,75 @@ public class WhirlwindWeapon : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(suctionPoint.position, suctionRadius, stoneLayer);
         foreach (var hit in hits)
         {
-            //Debug.Log($" detection hit -> {hit}");
             Rigidbody2D rb = hit.attachedRigidbody;
             if (rb)
             {
                 Vector2 dir = ((Vector2)suctionPoint.position - rb.position).normalized;
                 rb.linearVelocity = dir * suctionForce;
 
-                // Si está suficientemente cerca, la succiona y destruye
                 if (Vector2.Distance(rb.position, suctionPoint.position) < 0.3f)
                 {
-                    CollectibleStone stoneData = hit.GetComponent<CollectibleStone>();
-                    if (stoneData)
+                    Collectible collectibleData = hit.GetComponent<Collectible>();
+                    if (collectibleData)
                     {
-                        if (toolScroller.CanAddAmmo(stoneData.stoneName))
+                        switch (collectibleData.type)
                         {
-                            toolScroller.AddAmmo(
-                                stoneData.stoneName,
-                                stoneData.stoneIcon,
-                                stoneData.projectilePrefab,
-                                1
-                            );
-                            Destroy(rb.gameObject);
-                        }
-                        else
-                        {
-                            Debug.Log("No hay espacio para más ammo");
+                            case CollectibleType.Stone:
+                                if (collectibleManager.CanAddAmmo(collectibleData.itemName))
+                                {
+                                    collectibleManager.AddAmmo(
+                                        collectibleData.itemName,
+                                        collectibleData.itemIcon,
+                                        collectibleData.projectilePrefab,
+                                        1
+                                    );
+                                }
+                                else
+                                {
+                                    Debug.Log("No hay espacio para más piedras");
+                                }
+                                break;
+
+                            case CollectibleType.Veggie:
+                                collectibleManager.AddVeggie(
+                                    collectibleData.itemName,
+                                    collectibleData.itemIcon,
+                                    1
+                                );
+                                break;
                         }
                     }
+
                     Destroy(rb.gameObject);
                 }
             }
         }
     }
+
     private void Attack()
     {
-        AmmoSlot activeAmmo = toolScroller.ammoSlots[toolScroller.activeSlotIndex];
-        GameObject prefabToShoot = activeAmmo.projectilePrefab;
+        AmmoSlot activeAmmo = collectibleManager.ammoSlots[collectibleManager.activeSlotIndex];
 
-        // 🔹 Verificar munición antes de disparar
-        if (!toolScroller.UseAmmo())
+        // 🔹 Chequeo de munición ANTES de gastar
+        if (activeAmmo == null || activeAmmo.IsEmpty() || activeAmmo.count <= 0)
+        {
+            Debug.LogWarning("No hay munición para disparar.");
             return;
+        }
 
+        GameObject prefabToShoot = activeAmmo.projectilePrefab;
         if (prefabToShoot == null)
         {
             Debug.LogWarning("Intentaste disparar pero el prefab es null.");
             return;
         }
 
+        // 🔹 Dirección de disparo
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
-
         Vector2 shootDirection = (mouseWorldPos - transform.position).normalized;
 
-        // 🔹 Corregir dirección del sprite si apunta al otro lado
+        // 🔹 Flip del sprite si cambia de dirección
         if ((shootDirection.x > 0 && playerManager.getSpriteDirection() < 0) ||
             (shootDirection.x < 0 && playerManager.getSpriteDirection() > 0))
         {
@@ -133,13 +150,20 @@ public class WhirlwindWeapon : MonoBehaviour
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.linearVelocity = shootDirection * shootForce;
 
-        // 🔹 Configurar StoneProjectile
+        // Config extra
         StoneProjectile sp = projectile.GetComponent<StoneProjectile>();
         sp.explosionDelay = projectileLifetime;
         sp.isProyectible = true;
 
+        // 🔹 Ahora sí gastamos la munición
+        collectibleManager.UseAmmo();
+
+        if (playerAnims)
+            playerAnims.SetTrigger("Shoot");
+
         Debug.Log("Disparo realizado. Munición restante: " + activeAmmo.count);
     }
+
 
     private void OnDrawGizmosSelected()
     {

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6009354872698009070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -310,65 +310,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoSlots:
-  - name: Roca
+  - name: Stone
     icon: {fileID: -8336788915280422936, guid: 8aba792be7db3bd4aafa8ab5442f4e74, type: 3}
     count: 0
     projectilePrefab: {fileID: 7658383522428676387, guid: 1271bdf1016a6d84a974292fff05c208, type: 3}
     spriteEmpty: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    sprite1: {fileID: 2959655019113054486, guid: 482c2ca4791e0a7448a52309cdf85e93, type: 3}
-    sprite3: {fileID: 7912043046031040899, guid: 126e051002c915745abee64fb4a23f8b, type: 3}
-    sprite5: {fileID: 7912043046031040899, guid: 126e051002c915745abee64fb4a23f8b, type: 3}
-  - name: Zanahoria
-    icon: {fileID: 4882546554554331878, guid: d3ff3e63af27cb44b83dabd807b02a5e, type: 3}
-    count: 0
-    projectilePrefab: {fileID: 7658383522428676387, guid: e00cfc11d51399f4db14a763f482dd12, type: 3}
-    spriteEmpty: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    sprite1: {fileID: -59941551686304308, guid: 8b5347122fbd76a43b427a804ebf6f28, type: 3}
-    sprite3: {fileID: 7469954669748459636, guid: 719896bde066c6a41ba69f31323e461e, type: 3}
-    sprite5: {fileID: 7469954669748459636, guid: 719896bde066c6a41ba69f31323e461e, type: 3}
-  - name: Cebolla
-    icon: {fileID: 1673951463, guid: 678640baed6266f4995d487bc471079b, type: 3}
-    count: 0
-    projectilePrefab: {fileID: 7658383522428676387, guid: d6c8a4bb939cf3b45ace16bf74fdaa77, type: 3}
-    spriteEmpty: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    sprite1: {fileID: 3165360677149893828, guid: 4dae5d52985cca34b83a0ac2d2dcee3a, type: 3}
-    sprite3: {fileID: -3624422478634548384, guid: d1c40a4ad297ba64b9e31765e779ebdb, type: 3}
-    sprite5: {fileID: -3624422478634548384, guid: d1c40a4ad297ba64b9e31765e779ebdb, type: 3}
-  - name: Papas
-    icon: {fileID: 3730022022874370696, guid: c60ed2ac91195874c95ce4d4ddc1baca, type: 3}
-    count: 0
-    projectilePrefab: {fileID: 7658383522428676387, guid: d0c7957eb3db36b4dad0c5d9d81d1e7f, type: 3}
-    spriteEmpty: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    sprite1: {fileID: -7442691712226907353, guid: 20dab94be9800b545830b0266699d892, type: 3}
-    sprite3: {fileID: 3029378112492599825, guid: ffe54c11ae4545c47a11ab1fc064ab5d, type: 3}
-    sprite5: {fileID: 3029378112492599825, guid: ffe54c11ae4545c47a11ab1fc064ab5d, type: 3}
-  slot1Icon: {fileID: 8060741376849440402}
-  slot2Icon: {fileID: 5024712032327710993}
-  slot3Icon: {fileID: 2159253563562176053}
-  slot1Count: {fileID: 7742636265699189804}
-  slot2Count: {fileID: 7752893413502219686}
-  slot3Count: {fileID: 898972878068597417}
-  slot_1: {fileID: 6818878154901216070}
-  slot_2: {fileID: 6009354872698009070}
-  slot_3: {fileID: 8049398178109264491}
-  leftPos: {x: -70, y: 130, z: 0}
-  centerPos: {x: 0, y: -30, z: 0}
-  rightPos: {x: 70, y: 130, z: 0}
-  leftScale: {x: 1, y: 1, z: 1}
-  centerScale: {x: 1, y: 1, z: 1}
-  rightScale: {x: 1, y: 1, z: 1}
+    spriteCount1: {fileID: 2959655019113054486, guid: 482c2ca4791e0a7448a52309cdf85e93, type: 3}
+    spriteCount3: {fileID: 2959655019113054486, guid: 482c2ca4791e0a7448a52309cdf85e93, type: 3}
+    spriteCount5: {fileID: 7912043046031040899, guid: 126e051002c915745abee64fb4a23f8b, type: 3}
+    spriteCount8: {fileID: 7912043046031040899, guid: 126e051002c915745abee64fb4a23f8b, type: 3}
+  slotIconAmmo: {fileID: 8060741376849440402}
+  slotCountAmmo: {fileID: 7742636265699189804}
+  slotAmmo: {fileID: 6818878154901216070}
+  topPos: {x: 0, y: 0, z: 0}
+  veggiePanel: {fileID: 0}
+  veggieSlotPrefab: {fileID: 8615589424117756144, guid: f4aa933be7b35fa48b8c463659d70754, type: 3}
   activeSlotIndex: 0
-  animTime: 0.25
-  scrollDelay: 0.3
-  slotDefault:
-    name: 
-    icon: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    count: 0
-    projectilePrefab: {fileID: 0}
-    spriteEmpty: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
-    sprite1: {fileID: 0}
-    sprite3: {fileID: 0}
-    sprite5: {fileID: 0}
+  defaultEmptySprite: {fileID: -7860449936230099971, guid: 947aed505ed476248967891d81a6d62a, type: 3}
 --- !u!1 &4786305080248834691
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +685,7 @@ GameObject:
   - component: {fileID: 6818878154901216070}
   - component: {fileID: 4427176929417819974}
   m_Layer: 0
-  m_Name: Slot_1
+  m_Name: Stones_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8049398178109264491
 RectTransform:
   m_ObjectHideFlags: 0
