@@ -11,6 +11,7 @@ public class WhirlwindWeapon : MonoBehaviour
     public float suctionForce = 5f;
 
     [SerializeField] PlayerMovement playerManager;
+    [SerializeField] Animator playerAnimator;
     [SerializeField] ToolScroller toolScroller;
 
     [Header("Attack Settings")]
@@ -114,6 +115,10 @@ public class WhirlwindWeapon : MonoBehaviour
         {
             Debug.LogWarning("Intentaste disparar pero el prefab es null.");
             return;
+        }
+
+        if (playerAnimator) {
+            playerAnimator.SetTrigger("Shoot");
         }
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
