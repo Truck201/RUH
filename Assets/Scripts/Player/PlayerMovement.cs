@@ -13,15 +13,19 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 3f;
     public float runSpeed = 6f;
 
+    [Header("Stamina")]
+    public float maxStamina = 3.5f;       // Cuánto dura la corrida (en segundos aprox)
+    public float staminaRecoveryRate = 2f; // cuánto recupera por segundo al caminar/detenerse
+    public float staminaDrainRate = 1f; // cuánto gasta por segundo al correr
+    private float currentStamina;
+    private bool exhausted; // 🔹 si se vacía, no puede correr hasta que recupere
+
     public Vector2 moveInput;
-
-    public float x, y;
-
     public float runInput;
 
     private NavMeshAgent agent;
     private Animator animator;
-    private bool isRunning;
+    public bool isRunning;
 
     public bool isOnStairs = false;
     [SerializeField] private SceneChanger currentStair;
@@ -36,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         agent.speed = walkSpeed;
 
         animator = GetComponent<Animator>();
+
+        currentStamina = maxStamina;
     }
 
     private void Update()
@@ -53,9 +59,42 @@ public class PlayerMovement : MonoBehaviour
         } 
         moveInput = playerInputs.Gameplay.Move.ReadValue<Vector2>();
         runInput = playerInputs.Gameplay.Run.ReadValue<float>();
-        isRunning = runInput > 0f;
 
-        agent.speed = isRunning ? runSpeed : walkSpeed;
+        bool wantsToRun = runInput > 0f && currentStamina > 0f && !exhausted;
+
+        if (wantsToRun)
+        {
+            isRunning = true;
+            agent.speed = runSpeed;
+            currentStamina -= staminaDrainRate * Time.deltaTime;
+
+            if (currentStamina <= 0f)
+            {
+                currentStamina = 0f;
+                exhausted = true; // ⚠️ se vació → entra en estado exhausto
+            }
+        }
+        else
+        {
+            isRunning = false;
+            agent.speed = walkSpeed;
+
+            // Recuperar stamina cuando no corres
+            if (currentStamina < maxStamina)
+            {
+                currentStamina += staminaRecoveryRate * Time.deltaTime;
+
+                if (currentStamina >= maxStamina * 0.5f)
+                {
+                    exhausted = false; // ✅ cuando recupera al menos la mitad, ya puede volver a correr
+                }
+
+                if (currentStamina > maxStamina)
+                    currentStamina = maxStamina;
+            }
+        }
+
+        //agent.speed = isRunning ? runSpeed : walkSpeed;
 
         // Si hay input, mover
         if (moveInput.sqrMagnitude > 0.01f)
@@ -122,16 +161,12 @@ public class PlayerMovement : MonoBehaviour
     //    }
     //}
 
+    public float GetStaminaNormalized() => currentStamina / maxStamina;
+
     private void OnEnable() => playerInputs.Enable();
     private void OnDisable() => playerInputs.Disable();
 
-    public float getSpriteDirection()
-    {
-        return moveInput.x;
-    }
+    public float getSpriteDirection() => moveInput.x;
 
-    public float FlipSprite(int dir)
-    {
-        return transform.localScale.x * dir;
-    }
+    public float FlipSprite(int dir) => transform.localScale.x * dir;
 }

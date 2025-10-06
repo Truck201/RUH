@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: 63ab8204a9049e845b1ed21a63b45925
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5807332860558050809
+    second: Ruh_Map_fence_01_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 416
+        width: 79
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70afbf92885386fa0800000000000000
+      internalID: -5807332860558050809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 431
+        width: 256
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad6b9e7f62719b4b8b7a73e62cf86f8
+      internalID: -1979631914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_11
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 431
+        width: 220
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfaf434524e5d94aa2d0377139e6357
+      internalID: 502196669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 351
+        width: 29
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f63b880f911db7449b97ce628753176
+      internalID: -2056437879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_21
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 384
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4324c73b4de173a46910f02310f74cf1
+      internalID: 636073455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_24
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 335
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf9aa8e875c2ec468d9bb899a93bb84
+      internalID: 381017800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_32
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 303
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b21e0c62d05704990d1223f9074bbc
+      internalID: -1154050033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_35
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 271
+        width: 29
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0b1f38fee2b3b46a8966e426855d1d
+      internalID: -501205078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_37
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 192
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b8ee72cd1b6e9488a0777d7d85da0d
+      internalID: -447353391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_38
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 288
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a514bcd25afb38242b6dd618c7ff25d7
+      internalID: -867635367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_46
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 96
+        width: 16
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f685a92e42e83145b73daf0854030e2
+      internalID: -1586006424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_50
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 0
+        width: 15
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1d2fec03d45ee4388363f2150b518d
+      internalID: 1871727068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_56
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 16
+        width: 16
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdf2aa77557dc5458d6d57870c3ed26
+      internalID: -946929059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_57
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 14
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2890be8d43185eb469793dd440f61e53
+      internalID: -404938428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_Map_fence_01_58
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 658
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809ce7d6a1a90f94792dac1fa92bf522
+      internalID: 1753627555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 14aa43d62c99812478304b009522e05a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ruh_Map_fence_01_0: -5807332860558050809
+      Ruh_Map_fence_01_1: -196923260
+      Ruh_Map_fence_01_10: -1979631914
+      Ruh_Map_fence_01_11: 502196669
+      Ruh_Map_fence_01_12: 1490444956
+      Ruh_Map_fence_01_13: -579342025
+      Ruh_Map_fence_01_14: 1259128169
+      Ruh_Map_fence_01_15: -953524958
+      Ruh_Map_fence_01_16: 1499230294
+      Ruh_Map_fence_01_17: -2025930168
+      Ruh_Map_fence_01_18: 1912529227
+      Ruh_Map_fence_01_19: -2056437879
+      Ruh_Map_fence_01_2: -33140103
+      Ruh_Map_fence_01_20: -1258943405
+      Ruh_Map_fence_01_21: 636073455
+      Ruh_Map_fence_01_22: -595986877
+      Ruh_Map_fence_01_23: -1194833
+      Ruh_Map_fence_01_24: 381017800
+      Ruh_Map_fence_01_25: 1075867413
+      Ruh_Map_fence_01_26: 1828084044
+      Ruh_Map_fence_01_27: 2117586121
+      Ruh_Map_fence_01_28: -1498544989
+      Ruh_Map_fence_01_29: -978755841
+      Ruh_Map_fence_01_3: -1443126747
+      Ruh_Map_fence_01_30: -1798776487
+      Ruh_Map_fence_01_31: 57467355
+      Ruh_Map_fence_01_32: -1154050033
+      Ruh_Map_fence_01_33: 328126816
+      Ruh_Map_fence_01_34: 1401352375
+      Ruh_Map_fence_01_35: -501205078
+      Ruh_Map_fence_01_36: -565396402
+      Ruh_Map_fence_01_37: -447353391
+      Ruh_Map_fence_01_38: -867635367
+      Ruh_Map_fence_01_39: 1862988457
+      Ruh_Map_fence_01_4: -1397915846
+      Ruh_Map_fence_01_40: 989251402
+      Ruh_Map_fence_01_41: 622256602
+      Ruh_Map_fence_01_42: 314141053
+      Ruh_Map_fence_01_43: 964265244
+      Ruh_Map_fence_01_44: 1302471410
+      Ruh_Map_fence_01_45: 1232085467
+      Ruh_Map_fence_01_46: -1586006424
+      Ruh_Map_fence_01_47: 2106140349
+      Ruh_Map_fence_01_48: -804967614
+      Ruh_Map_fence_01_49: -14850494
+      Ruh_Map_fence_01_5: -589456820
+      Ruh_Map_fence_01_50: 1871727068
+      Ruh_Map_fence_01_51: 1624845481
+      Ruh_Map_fence_01_52: -540152254
+      Ruh_Map_fence_01_53: -315856517
+      Ruh_Map_fence_01_54: -290414864
+      Ruh_Map_fence_01_55: 1913378864
+      Ruh_Map_fence_01_56: -946929059
+      Ruh_Map_fence_01_57: -404938428
+      Ruh_Map_fence_01_58: 1753627555
+      Ruh_Map_fence_01_59: 1321801372
+      Ruh_Map_fence_01_6: 1439381779
+      Ruh_Map_fence_01_60: -10020935
+      Ruh_Map_fence_01_61: 482732343
+      Ruh_Map_fence_01_62: -922372002
+      Ruh_Map_fence_01_63: -1644585281
+      Ruh_Map_fence_01_64: -39987561
+      Ruh_Map_fence_01_65: -658820066
+      Ruh_Map_fence_01_66: 623882966
+      Ruh_Map_fence_01_67: 54890340
+      Ruh_Map_fence_01_68: 1715294900
+      Ruh_Map_fence_01_69: -1524101709
+      Ruh_Map_fence_01_7: -218297711
+      Ruh_Map_fence_01_70: 575821199
+      Ruh_Map_fence_01_71: 332404378
+      Ruh_Map_fence_01_72: 57170000
+      Ruh_Map_fence_01_73: -1693213881
+      Ruh_Map_fence_01_74: 1051169018
+      Ruh_Map_fence_01_75: 422200632
+      Ruh_Map_fence_01_8: -1671696469
+      Ruh_Map_fence_01_9: 887165525
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -36,7 +36,7 @@ public class PedidoUI : MonoBehaviour
 
     private void Update()
     {
-        if (player == null || currentPedido == null) return;
+        //if (player == null || currentPedido == null) return;
 
         // 🔹 Verificamos proximidad
         float dist = Vector3.Distance(player.transform.position, transform.position);
@@ -52,7 +52,7 @@ public class PedidoUI : MonoBehaviour
         if (pedido.zanahorias > 0)
         {
             zanahoriaPanel.SetActive(true);
-            zanahoriasText.text = $"Zanahorias: {pedido.zanahorias}";
+            zanahoriasText.text = $"{pedido.zanahorias}";
         }
         else
         {
@@ -63,7 +63,7 @@ public class PedidoUI : MonoBehaviour
         if (pedido.papas > 0)
         {
             papaPanel.SetActive(true);
-            papasText.text = $"Papas: {pedido.papas}";
+            papasText.text = $"{pedido.papas}";
         }
         else
         {
@@ -74,7 +74,7 @@ public class PedidoUI : MonoBehaviour
         if (pedido.cebollas > 0)
         {
             cebollaPanel.SetActive(true);
-            cebollasText.text = $"Cebollas: {pedido.cebollas}";
+            cebollasText.text = $"{pedido.cebollas}";
         }
         else
         {
@@ -96,19 +96,39 @@ public class PedidoUI : MonoBehaviour
         }
     }
 
-    public void TryEntregarPedido()
+    public bool TryEntregarPedido()
     {
+        if (currentPedido == null)
+        {
+            Debug.LogWarning("No hay pedido asignado a este PedidoUI.");
+            return false;
+        }
+
         // 🔹 Chequeamos si hay suficientes ingredientes
         if (PlayerStats.Instance.PuedeCompletarPedido(currentPedido))
         {
             PlayerStats.Instance.EntregarPedido(currentPedido);
-            entregarButton.gameObject.SetActive(false);
+            currentPedido = null;
+
+            if (entregarButton)
+                entregarButton.gameObject.SetActive(false);
 
             Debug.Log("Pedido entregado con éxito!");
+            return true;
         }
         else
         {
             Debug.LogWarning("No tienes suficientes ingredientes para este pedido.");
+            return false;
         }
     }
+
+    public void OnPedidoDelivered()
+    {
+        // ejemplo: desactivar el objeto del pedido
+        gameObject.SetActive(false);
+    }
+
+    // getter para que EntregaButtonUI pueda consultar rápidamente
+    public ComunityDeliver.DeliverLevel GetCurrentPedido() => currentPedido;
 }

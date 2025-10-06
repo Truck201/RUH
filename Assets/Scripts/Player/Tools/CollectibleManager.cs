@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Security.Cryptography.X509Certificates;
 
 public class CollectibleManager : MonoBehaviour
 {
+    public static CollectibleManager Instance;
     [Header("Ammo Slot")]
     public AmmoSlot[] ammoSlots = new AmmoSlot[1];
 
@@ -25,6 +27,20 @@ public class CollectibleManager : MonoBehaviour
 
     [Header("Sprites por defecto")]
     [SerializeField] private Sprite defaultEmptySprite;
+
+    private void Awake()
+    {
+        // Singleton persistente
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
 
     void OnEnable()
     {
@@ -56,7 +72,6 @@ public class CollectibleManager : MonoBehaviour
             if (!slot.IsEmpty() && slot.name == stoneName)
             {
                 slot.count += amount;
-                PlayerStats.Instance.AddObjeto(stoneName, amount);
                 UpdateUI();
                 return;
             }
@@ -76,7 +91,6 @@ public class CollectibleManager : MonoBehaviour
                 slot.count = amount;
                 slot.icon = stoneIcon;
 
-                PlayerStats.Instance.AddObjeto(stoneName, amount);
                 UpdateUI();
                 return;
             }
@@ -112,6 +126,7 @@ public class CollectibleManager : MonoBehaviour
         }
 
         veggieInventory[veggieName] += amount;
+        PlayerStats.Instance.AddObjeto(veggieName, amount);
         if (veggieUI.ContainsKey(veggieName))
             veggieUI[veggieName].text = veggieInventory[veggieName].ToString("D2");
 
@@ -152,7 +167,6 @@ public class CollectibleManager : MonoBehaviour
 
         UpdateSlotUI(slotIconAmmo, slotCountAmmo, slot0);
     }
-
 
     private void UpdateSlotUI(Image icon, TMPro.TextMeshProUGUI countText, AmmoSlot slot)
     {
@@ -208,6 +222,17 @@ public class CollectibleManager : MonoBehaviour
         }
 
         return false; // Todos ocupados y diferentes
+    }
+
+    public void UpdateVeggieUI(string veggieName, int newAmount)
+    {
+        if (veggieInventory.ContainsKey(veggieName))
+            veggieInventory[veggieName] = newAmount;
+        else
+            veggieInventory.Add(veggieName, newAmount);
+
+        if (veggieUI.ContainsKey(veggieName))
+            veggieUI[veggieName].text = veggieInventory[veggieName].ToString("D2");
     }
 
 }

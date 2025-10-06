@@ -162,6 +162,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Scope"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b984402-ecfe-4836-a9c3-0015df734ed5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -432,7 +441,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6371aa5d-a6e2-4e87-b0fb-708d925ac54a"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -443,7 +452,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a0f4c529-7298-46a7-8065-c90c58499355"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -459,6 +468,39 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Entregar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""054bcc59-237d-4d43-8c76-f516b379f26a"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scope"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7eceee6a-035f-4ae8-b068-fa81ca140be7"",
+                    ""path"": ""<XInputController>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scope"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ecb76c3-da1b-4e88-8936-16fac02bcace"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scope"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -855,6 +897,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Vaccum = m_Gameplay.FindAction("Vaccum", throwIfNotFound: true);
         m_Gameplay_Entregar = m_Gameplay.FindAction("Entregar", throwIfNotFound: true);
+        m_Gameplay_Scope = m_Gameplay.FindAction("Scope", throwIfNotFound: true);
         // PauseMenu
         m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
         m_PauseMenu_Move = m_PauseMenu.FindAction("Move", throwIfNotFound: true);
@@ -955,6 +998,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Vaccum;
     private readonly InputAction m_Gameplay_Entregar;
+    private readonly InputAction m_Gameplay_Scope;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -998,6 +1042,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Entregar".
         /// </summary>
         public InputAction @Entregar => m_Wrapper.m_Gameplay_Entregar;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Scope".
+        /// </summary>
+        public InputAction @Scope => m_Wrapper.m_Gameplay_Scope;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1048,6 +1096,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Entregar.started += instance.OnEntregar;
             @Entregar.performed += instance.OnEntregar;
             @Entregar.canceled += instance.OnEntregar;
+            @Scope.started += instance.OnScope;
+            @Scope.performed += instance.OnScope;
+            @Scope.canceled += instance.OnScope;
         }
 
         /// <summary>
@@ -1083,6 +1134,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Entregar.started -= instance.OnEntregar;
             @Entregar.performed -= instance.OnEntregar;
             @Entregar.canceled -= instance.OnEntregar;
+            @Scope.started -= instance.OnScope;
+            @Scope.performed -= instance.OnScope;
+            @Scope.canceled -= instance.OnScope;
         }
 
         /// <summary>
@@ -1415,6 +1469,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEntregar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Scope" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnScope(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PauseMenu" which allows adding and removing callbacks.

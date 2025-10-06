@@ -10,6 +10,9 @@ public class WhirlwindWeapon : MonoBehaviour
     public LayerMask stoneLayer;
     public float suctionForce = 5f;
 
+    [Header("Vaccum Player - Object distance")]
+    public float playerObjectVaccumDistance = 0.4f;
+
     [SerializeField] PlayerMovement playerManager;
     [SerializeField] CollectibleManager collectibleManager;
 
@@ -22,6 +25,17 @@ public class WhirlwindWeapon : MonoBehaviour
     private PlayerInputs playerInputs;
     private bool isVacuuming = false;
 
+    private bool canAttack = false;
+
+    [Header("Auto Aim")]
+    public float autoAimRadius = 3f;
+    public LayerMask enemyLayer;
+    public GameObject aimMarkerPrefab;
+
+    private Transform currentTarget;
+    private GameObject currentMarker;
+
+
     private void Awake()
     {
         playerInputs = new PlayerInputs();
@@ -29,6 +43,7 @@ public class WhirlwindWeapon : MonoBehaviour
         playerInputs.Gameplay.Vaccum.performed += ctx => StartVacuum();
         playerInputs.Gameplay.Vaccum.canceled += ctx => StopVacuum();
         playerInputs.Gameplay.Attack.performed += ctx => Attack();
+        playerInputs.Gameplay.Scope.performed += ctx => SwitchTarget();
     }
     private void OnEnable()
     {
@@ -40,13 +55,32 @@ public class WhirlwindWeapon : MonoBehaviour
         playerInputs.Disable();
     }
 
+    public void ToggleAttack(bool attack)
+    {
+       canAttack = attack;
+    }
+
     private void Update()
     {
         if (isVacuuming)
         {
             Suction();
         }
+
+        if (currentTarget != null)
+        {
+            if (Vector2.Distance(transform.position, currentTarget.position) > autoAimRadius || currentTarget == null)
+            {
+                ClearTarget(); // Se sale del rango o fue destruido
+            }
+            else if (currentMarker != null)
+            {
+                ToggleAttack(true);
+                currentMarker.transform.position = currentTarget.position + Vector3.up * 1.5f;
+            }
+        }
     }
+
     private void StartVacuum()
     {
         isVacuuming = true;
@@ -76,7 +110,7 @@ public class WhirlwindWeapon : MonoBehaviour
                 Vector2 dir = ((Vector2)suctionPoint.position - rb.position).normalized;
                 rb.linearVelocity = dir * suctionForce;
 
-                if (Vector2.Distance(rb.position, suctionPoint.position) < 0.3f)
+                if (Vector2.Distance(rb.position, suctionPoint.position) < playerObjectVaccumDistance)
                 {
                     Collectible collectibleData = hit.GetComponent<Collectible>();
                     if (collectibleData)
@@ -117,32 +151,36 @@ public class WhirlwindWeapon : MonoBehaviour
 
     private void Attack()
     {
-        AmmoSlot activeAmmo = collectibleManager.ammoSlots[collectibleManager.activeSlotIndex];
+        if (!canAttack) return;
 
-        // 🔹 Chequeo de munición ANTES de gastar
-        if (activeAmmo == null || activeAmmo.IsEmpty() || activeAmmo.count <= 0)
+        AmmoSlot activeAmmo = collectibleManager.ammoSlots[collectibleManager.activeSlotIndex];
+        if (activeAmmo == null || activeAmmo.IsEmpty() || activeAmmo.count <= 0) 
         {
-            Debug.LogWarning("No hay munición para disparar.");
+            Debug.LogWarning("No active Ammo, Is Active ammo Empty, Ammo count <= 0");
             return;
         }
+
 
         GameObject prefabToShoot = activeAmmo.projectilePrefab;
         if (prefabToShoot == null)
         {
-            Debug.LogWarning("Intentaste disparar pero el prefab es null.");
+            Debug.LogWarning("No prefab activeAmmo proyectile");
             return;
         }
 
         // 🔹 Dirección de disparo
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f;
-        Vector2 shootDirection = (mouseWorldPos - transform.position).normalized;
+        Vector2 shootDirection;
 
         // 🔹 Flip del sprite si cambia de dirección
-        if ((shootDirection.x > 0 && playerManager.getSpriteDirection() < 0) ||
-            (shootDirection.x < 0 && playerManager.getSpriteDirection() > 0))
+        if (currentTarget != null)
         {
-            playerManager.FlipSprite(shootDirection.x > 0 ? 1 : -1);
+            shootDirection = (currentTarget.position - transform.position).normalized;
+        }
+        else
+        {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0f;
+            shootDirection = (mouseWorldPos - transform.position).normalized;
         }
 
         // 🔹 Instanciar proyectil
@@ -163,6 +201,58 @@ public class WhirlwindWeapon : MonoBehaviour
 
         Debug.Log("Disparo realizado. Munición restante: " + activeAmmo.count);
     }
+
+    private void SwitchTarget()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, autoAimRadius, enemyLayer);
+
+        if (enemies.Length == 0)
+        {
+            ClearTarget();
+            return;
+        }
+
+        // 🔹 Buscar el más cercano distinto del actual
+        Transform nextTarget = null;
+        float closestDist = Mathf.Infinity;
+
+        foreach (var e in enemies)
+        {
+            if (e.transform == currentTarget) continue;
+            float dist = Vector2.Distance(transform.position, e.transform.position);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                nextTarget = e.transform;
+            }
+        }
+
+        if (nextTarget != null)
+            SetTarget(nextTarget);
+
+        ToggleAttack(true);
+    }
+
+    private void SetTarget(Transform target)
+    {   
+        currentTarget = target;
+        ToggleAttack(true);
+        if (currentMarker == null && aimMarkerPrefab != null)
+            currentMarker = Instantiate(aimMarkerPrefab, target.position + Vector3.up * 1.5f, Quaternion.identity);
+        else if (currentMarker != null)
+            currentMarker.transform.position = target.position + Vector3.up * 1.5f;
+    }
+
+    private void ClearTarget()
+    {
+        currentTarget = null;
+
+        if (currentMarker != null)
+            Destroy(currentMarker);
+
+        ToggleAttack(false);
+    }
+
 
 
     private void OnDrawGizmosSelected()

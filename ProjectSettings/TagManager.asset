@@ -45,6 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3027938611
+    locked: 0
+  - name: Ground
+    uniqueID: 2861500515
+    locked: 0
+  - name: Objects
+    uniqueID: 1104593599
+    locked: 0
   - name: Stones
     uniqueID: 335482231
     locked: 0
@@ -56,6 +65,9 @@ TagManager:
     locked: 0
   - name: Vegetables
     uniqueID: 4062097245
+    locked: 0
+  - name: World
+    uniqueID: 3106500729
     locked: 0
   - name: Inventory
     uniqueID: 21866011

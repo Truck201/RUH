@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Stats Principales")]
     public int vidas = 5;
-    public int estamina = 1;
+    public float estamina = 1f;
 
     [Header("Nivel actual del jugador (0-5)")]
     [Range(0, 5)]
@@ -16,6 +17,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Experiencia del Jugador")]
     public float experienciaLevel = 50;
     public int experiencia = 0;
+    public Image experienciaImage;
 
     [Header("Bool Level UP")]
     public bool levelUP = false;
@@ -37,6 +39,11 @@ public class PlayerStats : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        if (experienciaImage)
+        {
+            experienciaImage.fillAmount = experiencia / experienciaLevel;
         }
     }
 
@@ -66,6 +73,8 @@ public class PlayerStats : MonoBehaviour
                 levelUP = true;
             }
         }
+
+        experienciaImage.fillAmount = experiencia / experienciaLevel;
         Debug.Log($"|| Experiencia total: {experiencia} ||");
     }
 
@@ -117,6 +126,13 @@ public class PlayerStats : MonoBehaviour
         RemoveObjeto("Zanahoria", pedido.zanahorias);
         RemoveObjeto("Papa", pedido.papas);
         RemoveObjeto("Cebolla", pedido.cebollas);
+
+        if (CollectibleManager.Instance != null)
+        {
+            CollectibleManager.Instance.UpdateVeggieUI("Zanahoria", GetObjetoCount("Zanahoria"));
+            CollectibleManager.Instance.UpdateVeggieUI("Papa", GetObjetoCount("Papa"));
+            CollectibleManager.Instance.UpdateVeggieUI("Cebolla", GetObjetoCount("Cebolla"));
+        }
 
         AddExperience(pedido.experiencia);
         Debug.Log("Pedido entregado correctamente.");
