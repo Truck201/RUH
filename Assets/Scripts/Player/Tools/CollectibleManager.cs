@@ -22,6 +22,7 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private GameObject veggieSlotPrefab;
     private Dictionary<string, TMPro.TextMeshProUGUI> veggieUI = new();
     private Dictionary<string, int> veggieInventory = new Dictionary<string, int>();
+    private Dictionary<string, GameObject> veggieSlots = new(); // guarda la instancia real del slot
 
     public int activeSlotIndex = 0;
 
@@ -110,6 +111,8 @@ public class CollectibleManager : MonoBehaviour
             if (veggieSlotPrefab != null && veggiePanel != null)
             {
                 GameObject newSlot = Instantiate(veggieSlotPrefab, veggiePanel);
+                veggieSlots[veggieName] = newSlot;
+
                 var icon = newSlot.transform.Find("Icon")?.GetComponent<Image>();
                 if (icon != null) icon.sprite = veggieIcon;
 
@@ -129,6 +132,10 @@ public class CollectibleManager : MonoBehaviour
         PlayerStats.Instance.AddObjeto(veggieName, amount);
         if (veggieUI.ContainsKey(veggieName))
             veggieUI[veggieName].text = veggieInventory[veggieName].ToString("D2");
+
+        // 👇 si llega a 0 o menos, ocultar el slot
+        if (veggieSlots.ContainsKey(veggieName))
+            veggieSlots[veggieName].SetActive(veggieInventory[veggieName] > 0);
 
         Debug.Log($"🥕 {veggieName} agregado. Total = {veggieInventory[veggieName]}");
     }
@@ -233,6 +240,8 @@ public class CollectibleManager : MonoBehaviour
 
         if (veggieUI.ContainsKey(veggieName))
             veggieUI[veggieName].text = veggieInventory[veggieName].ToString("D2");
-    }
 
+        if (veggieSlots.ContainsKey(veggieName))
+            veggieSlots[veggieName].SetActive(newAmount > 0);
+    }
 }

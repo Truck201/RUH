@@ -58,6 +58,11 @@ public class PlayerStats : MonoBehaviour
             deliverManager.SetPedidosPorNivel(nivelActual);
             deliverManagerUI.MostrarPedidos();
             Debug.Log($"|| Level UP {nivelActual} ||");
+
+            if (deliverManager != null)
+            {
+                deliverManager.ClearCompletedPedidos();
+            }
         }
     }
 

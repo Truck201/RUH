@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 335482231
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -7723251046478263786, guid: a94914d2610efe04dbacb7bc229afefe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,5 +196,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   itemName: Cebolla
-  itemIcon: {fileID: -1035012127465788832, guid: 1507234a97996c8469425bf193b8783a, type: 3}
+  itemIcon: {fileID: -3624422478634548384, guid: d1c40a4ad297ba64b9e31765e779ebdb, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}

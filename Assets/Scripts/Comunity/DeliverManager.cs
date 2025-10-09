@@ -10,6 +10,7 @@ public class DeliverManager : MonoBehaviour
     public int nivelActual;
     [SerializeField] private PlayerStats playerStats;
 
+    private List<ComunityDeliver.DeliverLevel> pedidosCompletados = new List<ComunityDeliver.DeliverLevel>();
     private List<ComunityDeliver.DeliverLevel> pedidosActuales = new List<ComunityDeliver.DeliverLevel>();
 
     void Start()
@@ -57,8 +58,33 @@ public class DeliverManager : MonoBehaviour
     public void CompletarPedido(ComunityDeliver.DeliverLevel pedido)
     {
         PlayerStats.Instance.EntregarPedido(pedido);
+
+        // ✅ marcar pedido como completado
+        if (!pedidosCompletados.Contains(pedido))
+            pedidosCompletados.Add(pedido);
+
+        Debug.Log($"Pedido completado ({pedidosCompletados.Count}/{pedidosActuales.Count})");
+
+        // ✅ si todos los pedidos del nivel actual están entregados → tomar nuevos
+        if (pedidosCompletados.Count >= pedidosActuales.Count)
+        {
+            Debug.Log($"🎉 Todos los pedidos del nivel {nivelActual} completados. Generando nuevos...");
+            pedidosCompletados.Clear();
+            SetPedidosPorNivel(nivelActual); // vuelve a elegir 3 pedidos del mismo nivel
+
+            // 🔹 actualizar la UI
+            var uiManager = FindFirstObjectByType<DeliverUIManager>();
+            if (uiManager != null)
+            {
+                uiManager.MostrarPedidos();
+            }
+        }
     }
 
+    public void ClearCompletedPedidos()
+    {
+        pedidosCompletados.Clear();
+    }
 
     public List<ComunityDeliver.DeliverLevel> GetPedidosActuales()
     {

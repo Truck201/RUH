@@ -60,6 +60,7 @@ public class InputContextManager : MonoBehaviour
         Inputs.Gameplay.Disable();
         Inputs.PauseMenu.Disable();
         Inputs.Inventory.Disable();
+        Inputs.Dialogue.Disable();
 
         // Activamos según el estado
         switch (newState)
@@ -75,6 +76,11 @@ public class InputContextManager : MonoBehaviour
             case GameState.Inventory:
                 Inputs.Inventory.Enable();
                 Debug.Log("Inventory");
+                break;
+            case GameState.Dialogue:
+                // 🔹 Durante el diálogo no habilitamos ningún mapa de input
+                Inputs.Dialogue.Enable();
+                Debug.Log("Dialogue");
                 break;
         }
     }

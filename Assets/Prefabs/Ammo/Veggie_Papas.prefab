@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 335482231
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -5363817377769164736, guid: 82db4fd874140854281a0a8ac01dfb11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,5 +196,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   itemName: Papa
-  itemIcon: {fileID: 6452482161634822928, guid: 1507234a97996c8469425bf193b8783a, type: 3}
+  itemIcon: {fileID: 3029378112492599825, guid: ffe54c11ae4545c47a11ab1fc064ab5d, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}
