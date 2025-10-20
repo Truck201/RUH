@@ -16,7 +16,6 @@ public class EntregaButtonUI : MonoBehaviour
     [SerializeField] PedidoUI currentPedidoUI;
     private DeliverManager deliverManager;
 
-    private PlayerInputs playerInputs;
     private bool isProcessing = false;
 
     private void Awake()
@@ -33,9 +32,6 @@ public class EntregaButtonUI : MonoBehaviour
         {
             Debug.LogWarning("EntregaButtonUI: no se encontró Button en hijos ni fue asignado.");
         }
-
-        playerInputs = new PlayerInputs();
-        playerInputs.Gameplay.Entregar.performed += ctx => OnButtonPressed();
 
         player = GameObject.FindGameObjectWithTag("Player");
         deliverManager = Object.FindFirstObjectByType<DeliverManager>();
@@ -68,7 +64,7 @@ public class EntregaButtonUI : MonoBehaviour
 
         UpdateInputText();
 
-        if (IsEntregarPressed())
+        if (GlobalInputManager.Instance.DeliverPressed())
         {
             OnButtonPressed();
         }
@@ -76,17 +72,22 @@ public class EntregaButtonUI : MonoBehaviour
 
     private void UpdateInputText()
     {
-        inputText.text = InputContextManager.Instance.GetBindingDisplayString(
-            InputContextManager.Instance.Inputs.Gameplay.Entregar
-        );
-    }
+        if (GlobalInputManager.Instance == null)
+        {
+            inputText.text = "";
+            return;
+        }
 
+        string bindingText = GlobalInputManager.Instance.GetCurrentDeliverBinding();
 
-    private bool IsEntregarPressed()
-    {
-        var inputAction = InputContextManager.Instance.Inputs.Gameplay.Entregar;
-        //Debug.Log("Pressed Entregar");
-        return inputAction.WasPerformedThisFrame();
+        if (string.IsNullOrEmpty(bindingText))
+        {
+            // Puede pasar en los primeros frames, o si no hay binding configurado
+            inputText.text = "";
+            return;
+        }
+
+        inputText.text = bindingText;
     }
 
     public void SetPedidoUI(PedidoUI pedidoUI)

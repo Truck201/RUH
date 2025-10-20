@@ -20,13 +20,15 @@ public class GlobalGameManager : MonoBehaviour
 
     private void Awake()
     {
-        //if (Instance != null && Instance != this)
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        // Singleton persistente
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()

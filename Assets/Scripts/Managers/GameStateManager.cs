@@ -18,13 +18,15 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        // Singleton persistente
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void SetState(GameState newState)

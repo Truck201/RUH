@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class EnemyHealthAndStun : MonoBehaviour
@@ -6,43 +6,79 @@ public class EnemyHealthAndStun : MonoBehaviour
     public int maxHealth = 2;
     public float stunDuration = 2f; // tiempo mareado
     private int currentHealth;
-    private bool isStunned = false;
 
-    private EnemyAI enemyAI;
-    private Rigidbody2D rb;
+    private EnemyMovement enemyMovement;
+    private Animator animator;
+
+    // 🧩 Prefabs para los drops
+    [Header("Drop Prefabs")]
+    public GameObject zanahoriaPrefab;
+    public GameObject papaPrefab;
+    public GameObject cebollaPrefab;
+
+    // guardamos el último proyectil que lo golpeó
+    private string lastHitSource;
 
     void Awake()
     {
         currentHealth = maxHealth;
-        enemyAI = GetComponent<EnemyAI>();
-        rb = GetComponent<Rigidbody2D>();
+        enemyMovement = GetComponent<EnemyMovement>();
+        animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, string sourceName = "")
     {
-        // if (isStunned) return;
-
         currentHealth -= amount;
+        lastHitSource = sourceName;
+
         if (currentHealth <= 0)
         {
-            Destroy(gameObject); // O animaci�n de muerte
+            Die();
         }
         else
         {
-            StartCoroutine(Stun());
+            Stun();
         }
     }
 
-    private IEnumerator Stun()
+    private void Stun()
     {
-        isStunned = true;
-        enemyAI.enabled = false; // Desactiva la IA
-        rb.linearVelocity = Vector2.zero;
+        if (enemyMovement)
+        {
+            enemyMovement.stunned = true;
+            animator.SetBool("Stunned", true);
+            StartCoroutine(StunCoroutine());
+        }
+    }
 
+    private IEnumerator StunCoroutine()
+    {
         yield return new WaitForSeconds(stunDuration);
+        enemyMovement.stunned = false;
+        animator.SetBool("Stunned", false);
+    }
+    private void Die()
+    {
+        animator.SetTrigger("Die");
 
-        isStunned = false;
-        enemyAI.enabled = true;
-        enemyAI.ChangeState(EnemyAI.State.Idle);
+        // 🧩 Determinar qué objeto soltar
+        GameObject dropPrefab = null;
+
+        if (!string.IsNullOrEmpty(lastHitSource))
+        {
+            if (lastHitSource.Contains("Zanahoria"))
+                dropPrefab = zanahoriaPrefab;
+            else if (lastHitSource.Contains("Papa"))
+                dropPrefab = papaPrefab;
+            else if (lastHitSource.Contains("Cebolla"))
+                dropPrefab = cebollaPrefab;
+        }
+
+        if (dropPrefab != null)
+        {
+            Instantiate(dropPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject, 1f);
     }
 }

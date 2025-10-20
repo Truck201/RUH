@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class DeliverManager : MonoBehaviour
 {
+    public static DeliverManager Instance { get; private set; }
+
     [Header("Referencia al ScriptableObject")]
     public ComunityDeliver deliverData;
 
@@ -12,6 +14,19 @@ public class DeliverManager : MonoBehaviour
 
     private List<ComunityDeliver.DeliverLevel> pedidosCompletados = new List<ComunityDeliver.DeliverLevel>();
     private List<ComunityDeliver.DeliverLevel> pedidosActuales = new List<ComunityDeliver.DeliverLevel>();
+
+    private void Awake()
+    {
+        if (DeliverManager.Instance == null)
+        {
+            DeliverManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WhirlwindWeapon : MonoBehaviour
@@ -21,9 +22,12 @@ public class WhirlwindWeapon : MonoBehaviour
     public float projectileLifetime = 2f;
 
     [SerializeField] Animator playerAnims;
+    private Animator weaponAnimator;
 
     private PlayerInputs playerInputs;
     private bool isVacuuming = false;
+    public bool frontVaccum;
+    public bool backVaccum;
 
     private bool canAttack = false;
 
@@ -35,7 +39,6 @@ public class WhirlwindWeapon : MonoBehaviour
     private Transform currentTarget;
     private GameObject currentMarker;
 
-
     private void Awake()
     {
         playerInputs = new PlayerInputs();
@@ -44,6 +47,8 @@ public class WhirlwindWeapon : MonoBehaviour
         playerInputs.Gameplay.Vaccum.canceled += ctx => StopVacuum();
         playerInputs.Gameplay.Attack.performed += ctx => Attack();
         playerInputs.Gameplay.Scope.performed += ctx => SwitchTarget();
+
+        weaponAnimator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
@@ -79,6 +84,21 @@ public class WhirlwindWeapon : MonoBehaviour
                 currentMarker.transform.position = currentTarget.position + Vector3.up * 1.5f;
             }
         }
+
+        if (weaponAnimator != null)
+        {
+            weaponAnimator.SetBool("Vaccum", isVacuuming);
+            weaponAnimator.SetBool("Front", frontVaccum);
+            weaponAnimator.SetBool("Back", backVaccum);
+
+            if (isVacuuming)
+            {
+                playerAnims.SetBool("isVaccum", true);
+            } else
+            {
+                playerAnims.SetBool("isVaccum", false);
+            }
+        }
     }
 
     private void StartVacuum()
@@ -105,101 +125,58 @@ public class WhirlwindWeapon : MonoBehaviour
         foreach (var hit in hits)
         {
             Rigidbody2D rb = hit.attachedRigidbody;
-            if (rb)
+            if (rb == null) continue;
+
+            Vector2 dir = ((Vector2)suctionPoint.position - rb.position).normalized;
+            rb.linearVelocity = dir * suctionForce;
+
+            if (Vector2.Distance(rb.position, suctionPoint.position) < playerObjectVaccumDistance)
             {
-                Vector2 dir = ((Vector2)suctionPoint.position - rb.position).normalized;
-                rb.linearVelocity = dir * suctionForce;
-
-                if (Vector2.Distance(rb.position, suctionPoint.position) < playerObjectVaccumDistance)
+                Collectible c = hit.GetComponent<Collectible>();
+                if (c != null)
                 {
-                    Collectible collectibleData = hit.GetComponent<Collectible>();
-                    if (collectibleData)
+                    playerAnims.SetTrigger("Absorb");
+                    switch (c.type)
                     {
-                        switch (collectibleData.type)
-                        {
-                            case CollectibleType.Stone:
-                                if (collectibleManager.CanAddAmmo(collectibleData.itemName))
-                                {
-                                    collectibleManager.AddAmmo(
-                                        collectibleData.itemName,
-                                        collectibleData.itemIcon,
-                                        collectibleData.projectilePrefab,
-                                        1
-                                    );
-                                }
-                                else
-                                {
-                                    Debug.Log("No hay espacio para más piedras");
-                                }
-                                break;
-
-                            case CollectibleType.Veggie:
-                                collectibleManager.AddVeggie(
-                                    collectibleData.itemName,
-                                    collectibleData.itemIcon,
-                                    1
-                                );
-                                break;
-                        }
+                        case CollectibleType.Stone:
+                            PlayerStats.Instance.AddStone(c.itemName, c.projectilePrefab, c.itemIcon);
+                            CollectibleManager.Instance.UpdateAmmoUI(
+                                c.itemName,
+                                PlayerStats.Instance.GetStoneCount(c.itemName),
+                                c.itemIcon
+                            );
+                            break;
+                        case CollectibleType.Veggie:
+                            PlayerStats.Instance.AddVeggie(c.itemName, c.itemIcon);
+                            break;
                     }
-
-                    Destroy(rb.gameObject);
                 }
+
+                Destroy(rb.gameObject);
             }
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
         if (!canAttack) return;
 
-        AmmoSlot activeAmmo = collectibleManager.ammoSlots[collectibleManager.activeSlotIndex];
-        if (activeAmmo == null || activeAmmo.IsEmpty() || activeAmmo.count <= 0) 
-        {
-            Debug.LogWarning("No active Ammo, Is Active ammo Empty, Ammo count <= 0");
-            return;
-        }
+        AmmoSlot slot = CollectibleManager.Instance.ammoSlots[0];
+        if (slot == null || slot.IsEmpty() || PlayerStats.Instance.GetStoneCount(slot.name) <= 0) return;
 
-
-        GameObject prefabToShoot = activeAmmo.projectilePrefab;
-        if (prefabToShoot == null)
-        {
-            Debug.LogWarning("No prefab activeAmmo proyectile");
-            return;
-        }
-
-        // 🔹 Dirección de disparo
-        Vector2 shootDirection;
-
-        // 🔹 Flip del sprite si cambia de dirección
-        if (currentTarget != null)
-        {
-            shootDirection = (currentTarget.position - transform.position).normalized;
-        }
-        else
-        {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0f;
-            shootDirection = (mouseWorldPos - transform.position).normalized;
-        }
-
-        // 🔹 Instanciar proyectil
-        GameObject projectile = Instantiate(prefabToShoot, suctionPoint.position, Quaternion.identity);
+        GameObject projectile = Instantiate(slot.projectilePrefab, suctionPoint.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         rb.linearVelocity = shootDirection * shootForce;
 
-        // Config extra
         StoneProjectile sp = projectile.GetComponent<StoneProjectile>();
         sp.explosionDelay = projectileLifetime;
         sp.isProyectible = true;
 
-        // 🔹 Ahora sí gastamos la munición
-        collectibleManager.UseAmmo();
+        PlayerStats.Instance.UseStone(slot.name);
+        CollectibleManager.Instance.UpdateAmmoUI(slot.name, PlayerStats.Instance.GetStoneCount(slot.name), slot.icon);
 
-        if (playerAnims)
-            playerAnims.SetTrigger("Shoot");
-
-        Debug.Log("Disparo realizado. Munición restante: " + activeAmmo.count);
+        if (playerAnims) playerAnims.SetTrigger("Shoot");
     }
 
     private void SwitchTarget()
@@ -218,7 +195,7 @@ public class WhirlwindWeapon : MonoBehaviour
 
         foreach (var e in enemies)
         {
-            if (e.transform == currentTarget) continue;
+            //if (e.transform == currentTarget) continue;
             float dist = Vector2.Distance(transform.position, e.transform.position);
             if (dist < closestDist)
             {
@@ -227,13 +204,19 @@ public class WhirlwindWeapon : MonoBehaviour
             }
         }
 
+        if (nextTarget == currentTarget)
+        {
+            ClearTarget();
+            return;
+        }
+
         if (nextTarget != null)
             SetTarget(nextTarget);
 
         ToggleAttack(true);
     }
 
-    private void SetTarget(Transform target)
+    private void SetTarget(Transform target )
     {   
         currentTarget = target;
         ToggleAttack(true);
@@ -252,9 +235,6 @@ public class WhirlwindWeapon : MonoBehaviour
 
         ToggleAttack(false);
     }
-
-
-
     private void OnDrawGizmosSelected()
     {
         if (suctionPoint != null)

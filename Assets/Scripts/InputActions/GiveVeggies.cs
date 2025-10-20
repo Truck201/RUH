@@ -77,9 +77,9 @@ public class GiveVeggies : MonoBehaviour
         }
 
         // Sumar al inventario
-        if (CollectibleManager.Instance != null)
+        if (PlayerStats.Instance != null)
         {
-            CollectibleManager.Instance.AddVeggie(veggieName, veggieIcon, veggieAmount);
+            PlayerStats.Instance.AddVeggie(veggieName, veggieIcon, veggieAmount);
         }
 
         Debug.Log($"Recolectaste {veggieAmount}x {veggieName} 🥬");

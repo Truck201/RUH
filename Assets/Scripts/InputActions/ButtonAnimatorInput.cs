@@ -14,16 +14,8 @@ public class ButtonAnimatorInput : MonoBehaviour
     private void Start()
     {
         // Configurar animación inicial
-        bool isGamepad = InputContextManager.Instance.IsUsingGamepad();
+        bool isGamepad = GlobalInputManager.Instance.HaveGamepad();
         UpdateButtonVisual(isGamepad);
-
-        // Escuchar cambios de dispositivo
-        InputContextManager.OnDeviceChanged += UpdateButtonVisual;
-    }
-
-    private void OnDestroy()
-    {
-        InputContextManager.OnDeviceChanged -= UpdateButtonVisual;
     }
 
     private void UpdateButtonVisual(bool usingGamepad)

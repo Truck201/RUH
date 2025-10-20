@@ -33,7 +33,6 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("Interacción")]
     public GameObject interactIcon;
-    public KeyCode interactKey = KeyCode.E;
 
     private void Start()
     {
@@ -50,9 +49,11 @@ public class DialogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (inRange && !dialogueActive && Input.GetKeyDown(interactKey))
+        if (GlobalInputManager.Instance == null)
+            return; 
+
+        if (inRange && !dialogueActive && GlobalInputManager.Instance.DeliverPressed())
         {
-            // Determinar cuál secuencia de diálogo usar
             DialogueLine[] selectedLines = GetDialogueSet();
             StartCoroutine(StartDialogueSequence(selectedLines));
         }
@@ -103,7 +104,7 @@ public class DialogueSystem : MonoBehaviour
             if (i > 0)
             {
                 DialogueLine prevLine = dialogueLines[i - 1];
-                if (prevLine.haveGameObjects && prevLine.tutorialObjects != null)
+                if (prevLine.haveGameObjects && prevLine.tutorialObjects != null && !prevLine.activeInGame)
                 {
                     foreach (var obj in prevLine.tutorialObjects)
                         if (obj != null) obj.SetActive(false);
@@ -125,7 +126,7 @@ public class DialogueSystem : MonoBehaviour
 
         // 🔹 Apagar tutorial objects del último diálogo
         DialogueLine lastLine = dialogueLines[dialogueLines.Length - 1];
-        if (lastLine.haveGameObjects && lastLine.tutorialObjects != null)
+        if (lastLine.haveGameObjects && lastLine.tutorialObjects != null && !lastLine.activeInGame)
         {
             foreach (var obj in lastLine.tutorialObjects)
                 if (obj != null) obj.SetActive(false);

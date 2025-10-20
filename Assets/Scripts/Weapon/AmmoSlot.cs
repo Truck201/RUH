@@ -25,7 +25,7 @@ public class AmmoSlot
 
     public bool IsEmpty()
     {
-        return string.IsNullOrEmpty(name);
+        return string.IsNullOrEmpty(name) || projectilePrefab == null || count <= 0;
     }
 
     // 🔹 Devuelve el sprite correcto según la cantidad

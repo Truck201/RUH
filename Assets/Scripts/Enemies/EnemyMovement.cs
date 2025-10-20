@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
 
     private Transform player;
-    [SerializeField] private float distance;
+    [SerializeField] private float dist;
 
     public Vector3 startPoint;
     private Animator animator;
@@ -15,6 +15,8 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Patrol Settings")]
     public Transform[] patrolPoints;
+
+    public bool stunned = false;
 
     private void Awake()
     {
@@ -35,8 +37,9 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         if (GamePauseManager.Instance.IsPaused) return;
-        distance = Vector2.Distance(transform.position, player.position);
-        animator.SetFloat("Distance", distance);
+        if (stunned) return;
+        dist = Vector2.Distance(transform.position, player.position);
+        animator.SetFloat("Distance", dist);
     }
 
     //public void Flip(Vector3 objective)

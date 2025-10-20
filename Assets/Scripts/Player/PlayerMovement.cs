@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isOnStairs = false;
     [SerializeField] private SceneChanger currentStair;
+    [SerializeField] WhirlwindWeapon weapon;
+
+    private bool spriteUp;
+    private bool spriteDown;
 
     private void Awake()
     {
@@ -42,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
 
         currentStamina = maxStamina;
+    }
+
+    private void Start()
+    {
+        if (PlayerStats.Instance != null)
+            PlayerStats.Instance.SetPlayer(this.transform);
     }
 
     private void Update()
@@ -111,11 +121,38 @@ public class PlayerMovement : MonoBehaviour
                 agent.ResetPath();
         }
 
+
+        if (moveInput.y > 0) 
+        {
+            spriteUp = true;
+            spriteDown = false;
+
+            weapon.frontVaccum = true;
+            weapon.backVaccum = false;
+        }
+        else if (moveInput.y < 0)
+        {
+            spriteUp = false;
+            spriteDown = true;
+
+            weapon.frontVaccum = false;
+            weapon.backVaccum = true;
+        } else
+        {
+            spriteUp = false;
+            spriteDown = false;
+
+            weapon.frontVaccum = false;
+            weapon.backVaccum = false;
+        }
+
         // Animaciones
         if (animator != null)
         {
             animator.SetFloat("Speed", agent.velocity.magnitude);
             animator.SetBool("IsRunning", isRunning);
+            animator.SetBool("Up", spriteUp);
+            animator.SetBool("Down", spriteDown);
         }
 
         if (moveInput.x != 0f)

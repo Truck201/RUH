@@ -7,6 +7,8 @@ public class SceneChanger : MonoBehaviour
     public string sceneName;
     public float delay = 0f;
 
+    public Vector3 playerPositionSave;
+
     private bool hasChanged = false;
 
     public void ChangeScene()
@@ -30,6 +32,7 @@ public class SceneChanger : MonoBehaviour
 
     private void LoadScene()
     {
+        PlayerStats.Instance.GuardarPosicion(playerPositionSave);
         Debug.Log($"Change Scene {sceneName}");
         SceneManager.LoadScene(sceneName);
     }

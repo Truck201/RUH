@@ -11,13 +11,15 @@ public class GamePauseManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        // Singleton persistente
+        if (GamePauseManager.Instance == null)
+        {
+            GamePauseManager.Instance = this;
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void SetPause(bool pause)

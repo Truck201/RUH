@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Entregar",
+                    "name": "Deliver",
                     "type": "Button",
                     "id": "94284d38-9537-48ef-a5fc-f0006fd6788c",
                     "expectedControlType": "",
@@ -359,7 +359,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Entregar",
+                    "action": "Deliver",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -370,7 +370,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Entregar",
+                    "action": "Deliver",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -381,7 +381,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Entregar",
+                    "action": "Deliver",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

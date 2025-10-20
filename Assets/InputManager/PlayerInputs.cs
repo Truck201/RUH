@@ -155,7 +155,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Entregar"",
+                    ""name"": ""Deliver"",
                     ""type"": ""Button"",
                     ""id"": ""94284d38-9537-48ef-a5fc-f0006fd6788c"",
                     ""expectedControlType"": """",
@@ -445,7 +445,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Entregar"",
+                    ""action"": ""Deliver"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -456,7 +456,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Entregar"",
+                    ""action"": ""Deliver"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -467,7 +467,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Entregar"",
+                    ""action"": ""Deliver"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -946,7 +946,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay_Scroll = m_Gameplay.FindAction("Scroll", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Vaccum = m_Gameplay.FindAction("Vaccum", throwIfNotFound: true);
-        m_Gameplay_Entregar = m_Gameplay.FindAction("Entregar", throwIfNotFound: true);
+        m_Gameplay_Deliver = m_Gameplay.FindAction("Deliver", throwIfNotFound: true);
         m_Gameplay_Scope = m_Gameplay.FindAction("Scope", throwIfNotFound: true);
         // PauseMenu
         m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
@@ -1051,7 +1051,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Scroll;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Vaccum;
-    private readonly InputAction m_Gameplay_Entregar;
+    private readonly InputAction m_Gameplay_Deliver;
     private readonly InputAction m_Gameplay_Scope;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
@@ -1093,9 +1093,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Vaccum => m_Wrapper.m_Gameplay_Vaccum;
         /// <summary>
-        /// Provides access to the underlying input action "Gameplay/Entregar".
+        /// Provides access to the underlying input action "Gameplay/Deliver".
         /// </summary>
-        public InputAction @Entregar => m_Wrapper.m_Gameplay_Entregar;
+        public InputAction @Deliver => m_Wrapper.m_Gameplay_Deliver;
         /// <summary>
         /// Provides access to the underlying input action "Gameplay/Scope".
         /// </summary>
@@ -1147,9 +1147,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Vaccum.started += instance.OnVaccum;
             @Vaccum.performed += instance.OnVaccum;
             @Vaccum.canceled += instance.OnVaccum;
-            @Entregar.started += instance.OnEntregar;
-            @Entregar.performed += instance.OnEntregar;
-            @Entregar.canceled += instance.OnEntregar;
+            @Deliver.started += instance.OnDeliver;
+            @Deliver.performed += instance.OnDeliver;
+            @Deliver.canceled += instance.OnDeliver;
             @Scope.started += instance.OnScope;
             @Scope.performed += instance.OnScope;
             @Scope.canceled += instance.OnScope;
@@ -1185,9 +1185,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Vaccum.started -= instance.OnVaccum;
             @Vaccum.performed -= instance.OnVaccum;
             @Vaccum.canceled -= instance.OnVaccum;
-            @Entregar.started -= instance.OnEntregar;
-            @Entregar.performed -= instance.OnEntregar;
-            @Entregar.canceled -= instance.OnEntregar;
+            @Deliver.started -= instance.OnDeliver;
+            @Deliver.performed -= instance.OnDeliver;
+            @Deliver.canceled -= instance.OnDeliver;
             @Scope.started -= instance.OnScope;
             @Scope.performed -= instance.OnScope;
             @Scope.canceled -= instance.OnScope;
@@ -1613,12 +1613,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnVaccum(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Entregar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Deliver" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnEntregar(InputAction.CallbackContext context);
+        void OnDeliver(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Scope" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

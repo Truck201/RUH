@@ -31,7 +31,7 @@ public class AttackBehaviour : StateMachineBehaviour
         {
             // Mover al enemigo hacia la dirección
             enemyPos.position += direction * speed * Time.deltaTime;
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             // Desacelerar progresivamente
             speed *= deceleration;
         }

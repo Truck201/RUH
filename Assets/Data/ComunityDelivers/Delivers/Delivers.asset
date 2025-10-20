@@ -18,7 +18,7 @@ MonoBehaviour:
       papas: 0
       cebollas: 0
       experiencia: 10
-    - zanahorias: 3
+    - zanahorias: 2
       papas: 0
       cebollas: 0
       experiencia: 10
@@ -30,11 +30,11 @@ MonoBehaviour:
       papas: 0
       cebollas: 0
       experiencia: 10
-    - zanahorias: 4
+    - zanahorias: 3
       papas: 0
       cebollas: 0
       experiencia: 10
-    - zanahorias: 4
+    - zanahorias: 3
       papas: 0
       cebollas: 0
       experiencia: 10
@@ -65,29 +65,29 @@ MonoBehaviour:
       experiencia: 20
   - pedidos:
     - zanahorias: 8
-      papas: 2
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 2
+      experiencia: 50
     - zanahorias: 7
-      papas: 3
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 2
+      experiencia: 50
     - zanahorias: 8
-      papas: 2
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 2
+      experiencia: 50
     - zanahorias: 9
-      papas: 4
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 4
+      experiencia: 50
     - zanahorias: 8
-      papas: 4
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 4
+      experiencia: 50
     - zanahorias: 8
-      papas: 3
-      cebollas: 0
-      experiencia: 40
+      papas: 0
+      cebollas: 3
+      experiencia: 50
   - pedidos:
     - zanahorias: 0
       papas: 0

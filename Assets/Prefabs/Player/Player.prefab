@@ -31,8 +31,7 @@ Transform:
   m_LocalPosition: {x: 0.05, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6699769151211014177}
+  m_Children: []
   m_Father: {fileID: 453613134932984318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3509661116051433345
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 21866011
-  m_SortingLayer: 5
+  m_SortingLayer: 9
   m_SortingOrder: 2
   m_Sprite: {fileID: -144335857, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.03137255}
@@ -108,11 +107,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   suctionForce: 4
+  playerObjectVaccumDistance: 0.4
   playerManager: {fileID: 553357581542627541}
   collectibleManager: {fileID: 0}
   shootForce: 10
   projectileLifetime: 2
   playerAnims: {fileID: 1023232877317549403}
+  autoAimRadius: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  aimMarkerPrefab: {fileID: 0}
 --- !u!61 &2625285488050494238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +201,7 @@ Transform:
   m_Children:
   - {fileID: 3709088509377857045}
   - {fileID: 176104606846970516}
+  - {fileID: 6699769151211014177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8124042479273642636
@@ -240,7 +246,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 975436607
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: 1059876215649810054, guid: 071ffa0b45e821540a8e5eaa8b14d642, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -504,12 +510,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5894583923842621782}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.049987793, y: -0.2000122, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 176104606846970516}
+  m_Father: {fileID: 453613134932984318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8095631640139906521
 BoxCollider2D:

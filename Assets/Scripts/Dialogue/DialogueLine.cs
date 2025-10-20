@@ -13,5 +13,6 @@ public class DialogueLine
 
     [Header("Tutorial Objects")]
     public bool haveGameObjects;
+    public bool activeInGame;
     public GameObject[] tutorialObjects; // los objetos a mostrar en esta línea
 }

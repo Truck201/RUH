@@ -69,7 +69,7 @@ public class StoneProjectile : MonoBehaviour
             EnemyHealthAndStun enemy = collision.GetComponent<EnemyHealthAndStun>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, enemy.gameObject.name);
             }
             Destroy(gameObject); // Destruir la piedra al impactar
         }
