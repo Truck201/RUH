@@ -483,11 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
   offset: 2
---- !u!1 &200404498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2692892744078196844, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-  m_PrefabInstance: {fileID: 1200037463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &234336385 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 417360531007985044, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
@@ -805,26 +800,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 553357581542627541, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
   m_PrefabInstance: {fileID: 1200037463}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200404498}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23fc19343fab5c44c8874fb03db5db25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &479969343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200404498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def8c8a2d5fcaea4b8700c9e1b86ed2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 5000
-  offset: 0
 --- !u!1 &516968151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6136669394134768930, guid: a3002da693fc3ae4c8a3bbcc19d43119, type: 3}
@@ -43061,28 +43042,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 553357581542627541, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: runSpeed
-      value: 9.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 553357581542627541, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: walkSpeed
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 553357581542627541, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: staminaDrainRate
-      value: 0.8
-      objectReference: {fileID: 0}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1713973982}
     - target: {fileID: 2692892744078196844, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2841899682167099908, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: shootForce
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2841899682167099908, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: autoAimRadius
-      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2841899682167099908, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
       propertyPath: aimMarkerPrefab
@@ -43096,25 +43061,10 @@ PrefabInstance:
       propertyPath: collectibleManager
       value: 
       objectReference: {fileID: 234336385}
-    - target: {fileID: 2841899682167099908, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: playerObjectVaccumDistance
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8124042479273642636, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: m_SortingLayer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8124042479273642636, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1188466567
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2692892744078196844, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 479969343}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
 --- !u!1 &1215127289 stripped
 GameObject:
@@ -44046,6 +43996,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
   offset: 2
+--- !u!114 &1713973982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2841899682167099908, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
+  m_PrefabInstance: {fileID: 1200037463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1bcf6fa4f0d1341983b78c14e51790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762299667
 GameObject:
   m_ObjectHideFlags: 0

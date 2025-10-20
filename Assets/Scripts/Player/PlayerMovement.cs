@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if (GamePauseManager.Instance.IsPaused)
+        {
+            GamePauseManager.Instance.TogglePause();
+        }
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerInputs = new PlayerInputs();
         agent = GetComponent<NavMeshAgent>();
@@ -64,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
                 agent.velocity = Vector3.zero;
                 if (agent.isOnNavMesh)
                     agent.ResetPath();
+                Debug.Log("Pausadoo!!");
             }
                 return;
         } 

@@ -21,13 +21,35 @@ public class GlobalGameManager : MonoBehaviour
     private void Awake()
     {
         // Singleton persistente
-        if (Instance == null)
+        // if (Instance == null)
+        // {
+        //     Instance = this;
+        // }
+        // else
+        // {
+        //     Destroy(gameObject);
+        // }
+
+        pauseCanvas = GameObject.Find("PauseCanvas");
+        firstPauseSelected =   GameObject.Find("ResumePauseText");
+        pauseCanvas.SetActive(false);
+    }
+
+    void Update()
+    {
+        var pauseInput = GlobalInputManager.Instance.Pause;
+        var quitInput = GlobalInputManager.Instance.PauseQuit;
+
+        if (pauseInput || quitInput)
         {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            GameStateManager.Instance.SetState(
+                GameStateManager.Instance.CurrentState == GameState.Gameplay
+                ? GameState.Paused
+                : GameState.Gameplay
+            );
+
+            GamePauseManager.Instance.TogglePause();
+            Debug.Log("Confirm Pause");
         }
     }
 
@@ -45,12 +67,16 @@ public class GlobalGameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Si la escena está en la lista ignorada, ocultamos todo
+        // Si la escena estï¿½ en la lista ignorada, ocultamos todo
         if (IsIgnoredScene(scene.name))
         {
             if (pauseCanvas) pauseCanvas.SetActive(false);
             if (inventoryCanvas) inventoryCanvas.SetActive(false);
         }
+
+        // pauseCanvas = GameObject.Find("PauseCanvas");
+        // firstPauseSelected = GameObject.Find("ResumePauseText");
+        // pauseCanvas.SetActive(false);
     }
 
     private bool IsIgnoredScene(string sceneName)
@@ -68,7 +94,7 @@ public class GlobalGameManager : MonoBehaviour
         if (IsIgnoredScene(SceneManager.GetActiveScene().name))
             return;
 
-        // Activar/Desactivar según el estado
+        // Activar/Desactivar segï¿½n el estado
         switch (newState)
         {
             case GameState.Paused:
