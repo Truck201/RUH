@@ -37,7 +37,7 @@ public class WhirlwindWeapon : MonoBehaviour
     public LayerMask enemyLayer;
     public GameObject aimMarkerPrefab;
 
-    private Transform currentTarget;
+    public Transform currentTarget;
     private GameObject currentMarker;
 
     private DynamicSortingOrder sortingOrder;
@@ -121,10 +121,14 @@ public class WhirlwindWeapon : MonoBehaviour
     private void StartVacuum()
     {
         isVacuuming = true;
+        SoundController.Instance.PlaySFXLoop(SoundController.Instance.SFX_absorb);
     }
     private void StopVacuum()
     {
         isVacuuming = false;
+
+        SoundController.Instance.StopSFXLoop();
+        SoundController.Instance.PlaySFX(SoundController.Instance.SFX_noAbsorb);
 
         foreach (var hit in objectsInsideSuction)
         {
@@ -132,8 +136,7 @@ public class WhirlwindWeapon : MonoBehaviour
             if (rb != null) rb.linearVelocity = Vector2.zero;
         }
 
-        if (SoundController.Instance != null)
-            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_noAbsorb);
+
     }
     private void Suction()
     {
@@ -190,18 +193,8 @@ public class WhirlwindWeapon : MonoBehaviour
         GameObject projectile = Instantiate(slot.projectilePrefab, suctionPoint.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
 
-        Vector2 shootDirection;
-
         // ✅ Si hay objetivo (scope auto-aim), disparamos hacia él
-        if (currentTarget != null)
-        {
-            shootDirection = (currentTarget.position - suctionPoint.position).normalized;
-        }
-        else
-        {
-            // ✅ Si NO hay objetivo, disparamos hacia donde mira el jugador / arma
-            shootDirection = transform.right; // O usa transform.up si tu mira es vertical
-        }
+        Vector2 shootDirection = (currentTarget.position - suctionPoint.position).normalized;
 
         rb.linearVelocity = shootDirection * shootForce;
 

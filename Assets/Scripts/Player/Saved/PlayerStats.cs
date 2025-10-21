@@ -82,6 +82,9 @@ public class PlayerStats : MonoBehaviour
     {
         if (itemName == "Wood") woodCount++;
         if (itemName == "Metal") metalCount++;
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_pickup);
         Debug.Log($"Recolectado {itemName} -> Wood:{woodCount} Metal:{metalCount}");
     }
     public bool HasRequiredTrainItems()

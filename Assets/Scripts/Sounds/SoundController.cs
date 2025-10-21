@@ -1,7 +1,8 @@
-// Adaptado SoundController para manejar Fade, escenas y mixer
+﻿// Adaptado SoundController para manejar Fade, escenas y mixer
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SoundController : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class SoundController : MonoBehaviour
     [Header("Fuentes de Audio")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioSource ambientSource;
+    private AudioSource loopSfxSource;
 
     [Header("Audio Mixer")]
     public AudioMixer mixerMaster;
 
-    [Header("Clips de M�sica Level 1")]
+    [Header("Clips de Música Level 1")]
     public AudioClip music_Menu;
     public AudioClip music_Game;
     public AudioClip music_Caves;
@@ -74,7 +77,7 @@ public class SoundController : MonoBehaviour
     public AudioClip SFX_wind_ambient_caves_0;
     public AudioClip SFX_wind_ambient_caves_1;
 
-    [Header("Configuraci�n Fade")]
+    [Header("Configuración Fade")]
     public float fadeDuration = 1.5f;
 
     private Coroutine currentFadeCoroutine;
@@ -87,12 +90,39 @@ public class SoundController : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadVolume();
+
+            // ✅ Crear la fuente de Audio para loops
+            loopSfxSource = gameObject.AddComponent<AudioSource>();
+            loopSfxSource.loop = true;
+            loopSfxSource.volume = sfxSource.volume;
+            loopSfxSource.playOnAwake = false;
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
+    // 🔹 Método para reproducir un sonido en loop
+    public void PlaySFXLoop(AudioClip clip)
+    {
+        if (clip == null) return;
+
+        if (loopSfxSource.isPlaying && loopSfxSource.clip == clip)
+            return; // si ya se está reproduciendo ese loop, no lo repitas
+
+        loopSfxSource.clip = clip;
+        loopSfxSource.volume = sfxSource.volume;
+        loopSfxSource.Play();
+    }
+
+    // 🔹 Método para detener el sonido en loop
+    public void StopSFXLoop()
+    {
+        if (loopSfxSource.isPlaying)
+            loopSfxSource.Stop();
+    }
+
 
     public void PlayMusic(AudioClip newClip)
     {
@@ -128,7 +158,7 @@ public class SoundController : MonoBehaviour
         if (musicSource.enabled && musicSource.gameObject.activeInHierarchy)
             musicSource.Play();
         else
-            Debug.LogWarning("musicSource est� desactivado y no puede reproducirse.");
+            Debug.LogWarning("musicSource está desactivado y no puede reproducirse.");
 
         yield return FadeIn();
     }
@@ -178,9 +208,38 @@ public class SoundController : MonoBehaviour
         return sceneName switch
         {
             "MainMenu" => music_Menu,
-            "LobbyPrincipal" => music_Game,
-            "Caves" => music_Caves,
+            "Farm" => music_Game,
+            "ExtendsCaves" => music_Caves,
             _ => null
         };
+    }
+
+    public void PlaySceneMusic()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        AudioClip sceneMusic = GetSceneMusic(currentScene);
+
+        if (sceneMusic != null)
+        {
+            musicSource.loop = true; // La música debe ir en loop
+            PlayMusic(sceneMusic);
+        }
+    }
+
+    // 🔹 Reproducir un sonido de ambiente en loop
+    public void PlayAmbientLoop(AudioClip clip)
+    {
+        if (clip == null) return;
+
+        ambientSource.clip = clip;
+        ambientSource.loop = true;
+        ambientSource.Play();
+    }
+
+    // 🔹 Detener sonido de ambiente en loop
+    public void StopAmbientLoop()
+    {
+        if (ambientSource.isPlaying)
+            ambientSource.Stop();
     }
 }

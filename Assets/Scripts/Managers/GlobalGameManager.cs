@@ -19,6 +19,9 @@ public class GlobalGameManager : MonoBehaviour
     [SerializeField] private string[] ignoredScenes;
     // Ej: {"MainMenu", "CutsceneScene"}
 
+    [Header("Scene Name")]
+    public string SceneName;
+
     private void Awake()
     {
         // Singleton persistente
@@ -34,6 +37,27 @@ public class GlobalGameManager : MonoBehaviour
         //pauseCanvas = GameObject.Find("PauseCanvas");
         //firstPauseSelected =   GameObject.Find("ResumePauseText");
         pauseCanvas.SetActive(false);
+    }
+
+    private void Start()
+    {
+        // Al iniciar la escena
+        SoundController.Instance.PlaySceneMusic();
+
+        // Si querés reproducir un sonido ambiente de bosque
+        switch (SceneName)
+        {
+            case "MainMenu":
+                //SoundController.Instance.PlayAmbientLoop(SoundController.Instance.SFX_wind_ambient_forest_0);
+                return;
+            case "Farm":
+                SoundController.Instance.PlayAmbientLoop(SoundController.Instance.SFX_wind_ambient_forest_0);
+                return;
+            case "ExtendsCaves":
+                SoundController.Instance.PlayAmbientLoop(SoundController.Instance.SFX_wind_ambient_caves_0);
+                return;
+        }
+
     }
 
     void Update()
@@ -104,6 +128,10 @@ public class GlobalGameManager : MonoBehaviour
                 if (generalCanvas) generalCanvas.SetActive(false);
                 if (inventoryCanvas) inventoryCanvas.SetActive(false);
                 SetFirstSelected(firstPauseSelected);
+
+                if (SoundController.Instance != null)
+                    SoundController.Instance.PlaySFX(SoundController.Instance.SFX_pause);
+
                 break;
 
             case GameState.Inventory:
