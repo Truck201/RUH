@@ -47,12 +47,19 @@ public class GlobalInputManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        DetectGamepad();
+    }
+
     private void DetectGamepad()
     {
         var pads = Gamepad.all;
         AssignedGamepad = pads.Count > 0 ? pads[0] : null;
         IsUsingGamepad = AssignedGamepad != null;
-        Debug.Log($"🎮 Gamepad detectado: {(AssignedGamepad != null ? AssignedGamepad.displayName : "Ninguno")}");
+
+        //if (AssignedGamepad != null)
+        //    Debug.Log($"🎮 Gamepad detectado: {(AssignedGamepad != null ? AssignedGamepad.displayName : "Ninguno")}");
     }
 
     private void SubscribeInputs()
@@ -117,6 +124,8 @@ public class GlobalInputManager : MonoBehaviour
     public bool VaccumPressed() => Vaccum;
     public bool PausePressed() => Pause;
     public bool ScopePressed() => Scope;
+
+    public bool PassPressed() => DialoguePass;
 
     public bool HaveGamepad() => IsUsingGamepad;
 

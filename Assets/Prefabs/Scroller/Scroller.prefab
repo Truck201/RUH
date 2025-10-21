@@ -114,15 +114,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 72904fe38a4cc6545a94e0c26d64fcce, type: 2}
-  m_sharedMaterial: {fileID: -2391344561511102216, guid: 72904fe38a4cc6545a94e0c26d64fcce, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1317f581d1f7efe40a35b77ba54fe452, type: 2}
+  m_sharedMaterial: {fileID: -6168971853680542502, guid: 1317f581d1f7efe40a35b77ba54fe452, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.6313726, g: 0.27450982, b: 0.20392159, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -321,12 +321,11 @@ MonoBehaviour:
     spriteCount8: {fileID: 7912043046031040899, guid: 126e051002c915745abee64fb4a23f8b, type: 3}
   slotIconAmmo: {fileID: 8060741376849440402}
   slotCountAmmo: {fileID: 7742636265699189804}
-  slotAmmo: {fileID: 6818878154901216070}
-  topPos: {x: 0, y: 0, z: 0}
+  stoneContainer: {fileID: 0}
   veggiePanel: {fileID: 0}
   veggieSlotPrefab: {fileID: 8615589424117756144, guid: f4aa933be7b35fa48b8c463659d70754, type: 3}
-  activeSlotIndex: 0
   defaultEmptySprite: {fileID: -7860449936230099971, guid: 947aed505ed476248967891d81a6d62a, type: 3}
+  activeSlotIndex: 0
 --- !u!1 &4786305080248834691
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
+  m_AnchoredPosition: {x: -43.5, y: 25.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4517665661697425065
@@ -666,7 +665,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -7860449936230099971, guid: 5bee2b4e512c38042b05c9f630af8b5a, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -704,8 +703,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6097670482565799708}
-  - {fileID: 7644054173827883976}
   - {fileID: 2167445436267142724}
+  - {fileID: 7644054173827883976}
   m_Father: {fileID: 512408709276029101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -891,6 +890,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6909417280629480774, guid: c2379db66d8ea05469745e0e590169b0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7658383522428676387, guid: c2379db66d8ea05469745e0e590169b0, type: 3}
       propertyPath: m_Name
       value: Verdura Icon
@@ -953,6 +956,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6909417280629480774, guid: 614bcf09b7678734eb1b6ab023e1265d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7658383522428676387, guid: 614bcf09b7678734eb1b6ab023e1265d, type: 3}
       propertyPath: m_Name
       value: Stone Icon
@@ -1014,6 +1021,10 @@ PrefabInstance:
     - target: {fileID: 5121724811409152532, guid: 071367dbbcd8c5f418b894e239b3959e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909417280629480774, guid: 071367dbbcd8c5f418b894e239b3959e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7658383522428676387, guid: 071367dbbcd8c5f418b894e239b3959e, type: 3}
       propertyPath: m_Name

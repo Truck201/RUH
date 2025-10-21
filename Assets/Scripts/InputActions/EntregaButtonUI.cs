@@ -7,7 +7,7 @@ using System.Linq;
 public class EntregaButtonUI : MonoBehaviour
 {
     [Header("Referencias")]
-    public Button entregaButton;
+    public GameObject entregaButton;
     public TMP_Text inputText; // Texto que muestra la tecla / botón
     public float interactRadius = 2f;
 
@@ -20,18 +20,18 @@ public class EntregaButtonUI : MonoBehaviour
 
     private void Awake()
     {
-        if (entregaButton == null)
-            entregaButton = GetComponentInChildren<Button>();
+        if (entregaButton != null)
+            entregaButton.SetActive(false);
 
-        if (entregaButton)
-        {
-            entregaButton.onClick.AddListener(OnButtonPressed);
-            entregaButton.gameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("EntregaButtonUI: no se encontró Button en hijos ni fue asignado.");
-        }
+        //if (entregaButton)
+        //{
+        //    entregaButton.onClick.AddListener(OnButtonPressed);
+        //    entregaButton.gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("EntregaButtonUI: no se encontró Button en hijos ni fue asignado.");
+        //}
 
         player = GameObject.FindGameObjectWithTag("Player");
         deliverManager = Object.FindFirstObjectByType<DeliverManager>();

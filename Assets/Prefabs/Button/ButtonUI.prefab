@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5894155187383401805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2632504399061397986}
+  - component: {fileID: 1674899875740749359}
+  - component: {fileID: 9183301406927730644}
+  - component: {fileID: 1521077152493517286}
+  m_Layer: 0
+  m_Name: ButtonUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2632504399061397986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894155187383401805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.62, y: 3.41, z: 0.009915757}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1674899875740749359
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894155187383401805}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -756837281
+  m_SortingLayer: 11
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -4938692553705094513, guid: d24d58443a940504fb1e9ccb87ee8fb3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.15, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &9183301406927730644
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894155187383401805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1570f3accecad044a9b28a79e55af367, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1521077152493517286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894155187383401805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d74c3799251e1642a26fde081481529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionType: 4
+  animator: {fileID: 9183301406927730644}
+  W_button: {fileID: 22100000, guid: 0edf341467804cf46a42660b8430a6b7, type: 2}
+  A_button: {fileID: 22100000, guid: 1570f3accecad044a9b28a79e55af367, type: 2}
+  S_button: {fileID: 22100000, guid: c3c0b517eae77bd4381f8ed68b578e33, type: 2}
+  D_button: {fileID: 22100000, guid: c3377362d3979714ebfaafee157670b6, type: 2}
+  E_button: {fileID: 22100000, guid: 36bde212f28332a46a50bccb2eb5f58a, type: 2}
+  Q_button: {fileID: 22100000, guid: cdf7f3a8bbc314248befd132f58c1b9d, type: 2}
+  Shift_button: {fileID: 22100000, guid: 5aed6af19b52b3941afd2ea4a050ffea, type: 2}
+  MouseLeft_button: {fileID: 22100000, guid: 7f12736589182624cbadf1dfa20ee5d5, type: 2}
+  MouseRight_button: {fileID: 22100000, guid: ca17530631ae42141bf11ce231d2060a, type: 2}
+  X_button: {fileID: 22100000, guid: 6d2d07c8b7d4da84eadb438d01a9fef4, type: 2}
+  O_button: {fileID: 22100000, guid: a7a260bc419ac0c45bc3d2c8f8893563, type: 2}
+  L1_button: {fileID: 22100000, guid: fa05d731813d6f34c98d23b2287e63e1, type: 2}
+  R1_button: {fileID: 22100000, guid: fbc117b788a55844f8f3fb29c5fa26f1, type: 2}
+  Pad_button: {fileID: 22100000, guid: dbbea5f6f2c80864dbeac52e6b382bf6, type: 2}

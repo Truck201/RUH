@@ -29,9 +29,12 @@ public class SoundController : MonoBehaviour
 
     [Header("Player")]
     public AudioClip SFX_absorb;
+    public AudioClip SFX_noAbsorb;
+
     public AudioClip SFX_shoot;
     public AudioClip SFX_getDamage;
     public AudioClip SFX_pickup;
+    public AudioClip SFX_winExperience;
 
     public AudioClip SFX_walk_grass;
     public AudioClip SFX_walk_grave;
@@ -54,7 +57,7 @@ public class SoundController : MonoBehaviour
 
     [Header("Train")]
     public AudioClip SFX_repairTrain;
-    public AudioClip SFX_claxonTrainn;
+    public AudioClip SFX_claxonTrain;
 
     [Header("Ambient")]
     [Header("Forest")]

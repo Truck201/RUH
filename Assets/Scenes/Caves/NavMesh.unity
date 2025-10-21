@@ -667,12 +667,14 @@ MonoBehaviour:
   vidas: 5
   estamina: 1
   nivelActual: 0
-  canvasLevelUp: {fileID: 421281829}
-  canvasLevelText: {fileID: 745293156}
+  canvasLevelUp: {fileID: 0}
+  canvasLevelText: {fileID: 0}
   levelCountActual: {fileID: 687400493}
   experienciaLevel: 50
   experiencia: 0
   experienciaImage: {fileID: 1163467362}
+  woodCount: 0
+  metalCount: 0
   levelUP: 0
   levelCanvasActive: 0
   deliverManager: {fileID: 0}
@@ -780,11 +782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
   offset: 0
---- !u!1 &421281829 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2034736891920203494, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
-  m_PrefabInstance: {fileID: 542931078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &438681660 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7658383522428676387, guid: 1271bdf1016a6d84a974292fff05c208, type: 3}
@@ -795,17 +792,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 453613134932984318, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
   m_PrefabInstance: {fileID: 1200037463}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &479969339 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 553357581542627541, guid: b87bdb31e22653e469088acca4dcffc1, type: 3}
-  m_PrefabInstance: {fileID: 1200037463}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fc19343fab5c44c8874fb03db5db25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &516968151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6136669394134768930, guid: a3002da693fc3ae4c8a3bbcc19d43119, type: 3}
@@ -856,14 +842,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 2087014532253006226, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 479969339}
-    - target: {fileID: 2087014532253006226, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 284895204}
     - target: {fileID: 7205590384195978671, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -949,6 +927,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
+--- !u!1 &542931079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6473025162499612600, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
+  m_PrefabInstance: {fileID: 542931078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &567386981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1142,17 +1125,6 @@ PrefabInstance:
 --- !u!114 &687400493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8180888134318083062, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
-  m_PrefabInstance: {fileID: 542931078}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &745293156 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7884056243357892492, guid: f7a95fa9764e67c459cbe78e4ac9a6f5, type: 3}
   m_PrefabInstance: {fileID: 542931078}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -43420,6 +43392,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 257399419}
     - target: {fileID: 4856790125427200097, guid: e3011624f546a0847b81dff668b4cbc0, type: 3}
+      propertyPath: firstPauseSelected
+      value: 
+      objectReference: {fileID: 870485327}
+    - target: {fileID: 6826830517577231401, guid: e3011624f546a0847b81dff668b4cbc0, type: 3}
+      propertyPath: pauseCanvas
+      value: 
+      objectReference: {fileID: 257399419}
+    - target: {fileID: 6826830517577231401, guid: e3011624f546a0847b81dff668b4cbc0, type: 3}
+      propertyPath: generalCanvas
+      value: 
+      objectReference: {fileID: 542931079}
+    - target: {fileID: 6826830517577231401, guid: e3011624f546a0847b81dff668b4cbc0, type: 3}
       propertyPath: firstPauseSelected
       value: 
       objectReference: {fileID: 870485327}

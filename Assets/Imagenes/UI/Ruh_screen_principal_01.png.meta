@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: b0e05d43911f88245beed510551d3d70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -681270721356271813
+    second: Ruh_screen_principal_01_0
+  - first:
+      213: -1502796417248473742
+    second: Ruh_screen_principal_01_1
+  - first:
+      213: -6392611203286397325
+    second: Ruh_screen_principal_01_2
+  - first:
+      213: -1376871083216823374
+    second: Ruh_screen_principal_01_3
+  - first:
+      213: 6312637885782988358
+    second: Ruh_screen_principal_01_4
+  - first:
+      213: 2382138862972324729
+    second: Ruh_screen_principal_01_5
+  - first:
+      213: 8478325046418092034
+    second: Ruh_screen_principal_01_6
+  - first:
+      213: 876921461267253101
+    second: Ruh_screen_principal_01_7
+  - first:
+      213: 7284464157825425362
+    second: Ruh_screen_principal_01_8
+  - first:
+      213: -8362644885195034846
+    second: Ruh_screen_principal_01_9
+  - first:
+      213: 336111882289626016
+    second: Ruh_screen_principal_01_10
+  - first:
+      213: 1873858676073372115
+    second: Ruh_screen_principal_01_11
+  - first:
+      213: 709341403356799
+    second: Ruh_screen_principal_01_12
+  - first:
+      213: 7080965993260709863
+    second: Ruh_screen_principal_01_13
+  - first:
+      213: 2461563833717983489
+    second: Ruh_screen_principal_01_14
+  - first:
+      213: 3236722274363493975
+    second: Ruh_screen_principal_01_15
+  - first:
+      213: -2795074355355955321
+    second: Ruh_screen_principal_01_16
+  - first:
+      213: -4466970756505292594
+    second: Ruh_screen_principal_01_17
+  - first:
+      213: -6430510144535607835
+    second: Ruh_screen_principal_01_18
+  - first:
+      213: -5518554849070507863
+    second: Ruh_screen_principal_01_19
+  - first:
+      213: 5387589631383304815
+    second: Ruh_screen_principal_01_20
+  - first:
+      213: -7261543390946629883
+    second: Ruh_screen_principal_01_21
+  - first:
+      213: -6703112742917174735
+    second: Ruh_screen_principal_01_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_0
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 163
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f6fa173e3ab86f0800000000000000
+      internalID: -681270721356271813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 163
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dcc24ee9ef42be0800000000000000
+      internalID: -1502796417248473742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 163
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e8ee8eaf1e847a0800000000000000
+      internalID: -6392611203286397325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_3
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 163
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb9a577b0f54ece0800000000000000
+      internalID: -1376871083216823374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_4
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 163
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64694c916befa9750800000000000000
+      internalID: 6312637885782988358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 163
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b4e1dbcae0f0120800000000000000
+      internalID: 2382138862972324729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 115
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2003c0aa5bf09a570800000000000000
+      internalID: 8478325046418092034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 115
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6740c24c637b2c00800000000000000
+      internalID: 876921461267253101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_8
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 115
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfdf3a8e8d971560800000000000000
+      internalID: 7284464157825425362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_9
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 115
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f663bb8cae1fb80800000000000000
+      internalID: -8362644885195034846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 115
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab39a4e9fb1aa400800000000000000
+      internalID: 336111882289626016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_11
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 115
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d913aaa988410a10800000000000000
+      internalID: 1873858676073372115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 115
+        width: 44
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e1f5a6425820000800000000000000
+      internalID: 709341403356799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_13
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 86
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7fce6ed05a44260800000000000000
+      internalID: 7080965993260709863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_14
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 86
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10985bcc34b392220800000000000000
+      internalID: 2461563833717983489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_15
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 86
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ec70872c52bec20800000000000000
+      internalID: 3236722274363493975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_16
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 90
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f4438cea6e539d0800000000000000
+      internalID: -2795074355355955321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_17
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 86
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0b17493c12202c0800000000000000
+      internalID: -4466970756505292594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_18
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 86
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5c866081d32c6a0800000000000000
+      internalID: -6430510144535607835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_19
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 86
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a894a37a972a63b0800000000000000
+      internalID: -5518554849070507863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_20
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 86
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6afd2e993094ca40800000000000000
+      internalID: 5387589631383304815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_21
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 90
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5076a8d52c0d93b90800000000000000
+      internalID: -7261543390946629883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruh_screen_principal_01_22
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 86
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a07059972c9f2a0800000000000000
+      internalID: -6703112742917174735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ruh_screen_principal_01_0: -681270721356271813
+      Ruh_screen_principal_01_1: -1502796417248473742
+      Ruh_screen_principal_01_10: 336111882289626016
+      Ruh_screen_principal_01_11: 1873858676073372115
+      Ruh_screen_principal_01_12: 709341403356799
+      Ruh_screen_principal_01_13: 7080965993260709863
+      Ruh_screen_principal_01_14: 2461563833717983489
+      Ruh_screen_principal_01_15: 3236722274363493975
+      Ruh_screen_principal_01_16: -2795074355355955321
+      Ruh_screen_principal_01_17: -4466970756505292594
+      Ruh_screen_principal_01_18: -6430510144535607835
+      Ruh_screen_principal_01_19: -5518554849070507863
+      Ruh_screen_principal_01_2: -6392611203286397325
+      Ruh_screen_principal_01_20: 5387589631383304815
+      Ruh_screen_principal_01_21: -7261543390946629883
+      Ruh_screen_principal_01_22: -6703112742917174735
+      Ruh_screen_principal_01_3: -1376871083216823374
+      Ruh_screen_principal_01_4: 6312637885782988358
+      Ruh_screen_principal_01_5: 2382138862972324729
+      Ruh_screen_principal_01_6: 8478325046418092034
+      Ruh_screen_principal_01_7: 876921461267253101
+      Ruh_screen_principal_01_8: 7284464157825425362
+      Ruh_screen_principal_01_9: -8362644885195034846
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

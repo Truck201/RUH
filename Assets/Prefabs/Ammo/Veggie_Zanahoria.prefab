@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5997993095744721824}
   - component: {fileID: 7262019215351589537}
   - component: {fileID: 8126442713721779486}
+  - component: {fileID: 6969707264823415323}
   m_Layer: 3
   m_Name: Veggie_Zanahoria
   m_TagString: Untagged
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 335482231
-  m_SortingLayer: 4
+  m_SortingLayerID: -1188466567
+  m_SortingLayer: 8
   m_SortingOrder: 2
   m_Sprite: {fileID: 4041095430110426067, guid: 0803ce55384e94449b112f65ee89ff4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,5 +197,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   itemName: Zanahoria
-  itemIcon: {fileID: 7469954669748459636, guid: 719896bde066c6a41ba69f31323e461e, type: 3}
+  itemIcon: {fileID: 6495041812470565313, guid: 298d50dc8db7d1949845caedda55a745, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}
+--- !u!114 &6969707264823415323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658383522428676387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8c8a2d5fcaea4b8700c9e1b86ed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 5000
+  offset: 0

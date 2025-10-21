@@ -14,12 +14,12 @@ public class SelectionIconAppear : MonoBehaviour
     public GameObject iconOptions;
     public GameObject iconExit;
 
+    public SceneChanger sceneChanger;
+
     private void Update()
     {
         // 🔹 Obtener el objeto actualmente seleccionado por el EventSystem
         GameObject selected = EventSystem.current.currentSelectedGameObject;
-
-        Debug.Log($"selected --> {selected}");
 
         if (selected == null) return;
 
@@ -41,6 +41,22 @@ public class SelectionIconAppear : MonoBehaviour
         {
             iconExit.SetActive(selected == buttonExit);
             Debug.Log($"Icon Exit --> {selected} && {buttonExit}");
+        }
+
+        if (GlobalInputManager.Instance.DeliverPressed()) // reemplazar con tu binding
+        {
+            if (selected == buttonPlay && sceneChanger != null)
+            {
+                sceneChanger.ChangeScene();
+            }
+            else if (selected == buttonOptions)
+            {
+                // abrir opciones
+            }
+            else if (selected == buttonExit)
+            {
+                Application.Quit();
+            }
         }
     }
 }

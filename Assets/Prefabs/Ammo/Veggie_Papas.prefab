@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5997993095744721824}
   - component: {fileID: 7262019215351589537}
   - component: {fileID: 7389376524949300668}
+  - component: {fileID: -4418442767035608055}
   m_Layer: 3
   m_Name: Veggie_Papas
   m_TagString: Untagged
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 335482231
-  m_SortingLayer: 4
+  m_SortingLayerID: -1188466567
+  m_SortingLayer: 8
   m_SortingOrder: 2
   m_Sprite: {fileID: -5363817377769164736, guid: 82db4fd874140854281a0a8ac01dfb11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,5 +197,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   itemName: Papa
-  itemIcon: {fileID: 3029378112492599825, guid: ffe54c11ae4545c47a11ab1fc064ab5d, type: 3}
+  itemIcon: {fileID: -1092074689844314242, guid: 9556afd48f9e20e43bf9f1d8e341f1a6, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}
+--- !u!114 &-4418442767035608055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7658383522428676387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def8c8a2d5fcaea4b8700c9e1b86ed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 5000
+  offset: 0

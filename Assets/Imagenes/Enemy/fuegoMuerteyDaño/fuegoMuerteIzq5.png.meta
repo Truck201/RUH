@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 1615607798b79154598795ea40657fa6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4968876017738191855
+    second: fuegoMuerteIzq5_0
+  - first:
+      213: 7461406533769783058
+    second: fuegoMuerteIzq5_1
+  - first:
+      213: 4200879030091245440
+    second: fuegoMuerteIzq5_2
+  - first:
+      213: 5408784077646280154
+    second: fuegoMuerteIzq5_3
+  - first:
+      213: 8587109658490368711
+    second: fuegoMuerteIzq5_4
+  - first:
+      213: 306939484678646252
+    second: fuegoMuerteIzq5_5
+  - first:
+      213: 1704703126698793750
+    second: fuegoMuerteIzq5_6
+  - first:
+      213: 588407252008956315
+    second: fuegoMuerteIzq5_7
+  - first:
+      213: 8713127530468621759
+    second: fuegoMuerteIzq5_8
+  - first:
+      213: -172425458077154673
+    second: fuegoMuerteIzq5_9
+  - first:
+      213: -7825072325381793979
+    second: fuegoMuerteIzq5_10
+  - first:
+      213: 2095537367342389625
+    second: fuegoMuerteIzq5_11
+  - first:
+      213: 579306224167647232
+    second: fuegoMuerteIzq5_12
+  - first:
+      213: -4347437446291776428
+    second: fuegoMuerteIzq5_13
+  - first:
+      213: 7198085179886815674
+    second: fuegoMuerteIzq5_14
+  - first:
+      213: -5286478808555470006
+    second: fuegoMuerteIzq5_15
+  - first:
+      213: 973529840252815122
+    second: fuegoMuerteIzq5_16
+  - first:
+      213: -2683228594436591420
+    second: fuegoMuerteIzq5_17
+  - first:
+      213: -2896883891580147828
+    second: fuegoMuerteIzq5_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 62
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe31e32796ef4f440800000000000000
+      internalID: 4968876017738191855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 56
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2176022d5bd3c8760800000000000000
+      internalID: 7461406533769783058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 57
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087e9fc78358c4a30800000000000000
+      internalID: 4200879030091245440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 56
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad535ee267cdf0b40800000000000000
+      internalID: 5408784077646280154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c2f4a9ecba8b2770800000000000000
+      internalID: 8587109658490368711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 46
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9efc7c5d7724400800000000000000
+      internalID: 306939484678646252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 54
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b116a367258a710800000000000000
+      internalID: 1704703126698793750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 48
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91f14737417a2800800000000000000
+      internalID: 588407252008956315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 47
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd3248235f3be870800000000000000
+      internalID: 8713127530468621759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 39
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82c31d95fb6b9df0800000000000000
+      internalID: -172425458077154673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 39
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547d0e7dd22c76390800000000000000
+      internalID: -7825072325381793979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979100a0228d41d10800000000000000
+      internalID: 2095537367342389625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 43
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0087fab01fb1a0800800000000000000
+      internalID: 579306224167647232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 34
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c1c822daccaa3c0800000000000000
+      internalID: -4347437446291776428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_14
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 44
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab94822855cb4e360800000000000000
+      internalID: 7198085179886815674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 31
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43cb675887a2a6b0800000000000000
+      internalID: -5286478808555470006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_16
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 27
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21703825b3ca28d00800000000000000
+      internalID: 973529840252815122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_17
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 35
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c0bf694fc143cad0800000000000000
+      internalID: -2683228594436591420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuegoMuerteIzq5_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 27
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8760dee2733cc7d0800000000000000
+      internalID: -2896883891580147828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fuegoMuerteIzq5_0: 4968876017738191855
+      fuegoMuerteIzq5_1: 7461406533769783058
+      fuegoMuerteIzq5_10: -7825072325381793979
+      fuegoMuerteIzq5_11: 2095537367342389625
+      fuegoMuerteIzq5_12: 579306224167647232
+      fuegoMuerteIzq5_13: -4347437446291776428
+      fuegoMuerteIzq5_14: 7198085179886815674
+      fuegoMuerteIzq5_15: -5286478808555470006
+      fuegoMuerteIzq5_16: 973529840252815122
+      fuegoMuerteIzq5_17: -2683228594436591420
+      fuegoMuerteIzq5_18: -2896883891580147828
+      fuegoMuerteIzq5_2: 4200879030091245440
+      fuegoMuerteIzq5_3: 5408784077646280154
+      fuegoMuerteIzq5_4: 8587109658490368711
+      fuegoMuerteIzq5_5: 306939484678646252
+      fuegoMuerteIzq5_6: 1704703126698793750
+      fuegoMuerteIzq5_7: 588407252008956315
+      fuegoMuerteIzq5_8: 8713127530468621759
+      fuegoMuerteIzq5_9: -172425458077154673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

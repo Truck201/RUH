@@ -10,11 +10,13 @@ public class DeliverUIManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("Paso?");
-        MostrarPedidos();
+        if (RepairTrain.IsTrainRepaired)
+            MostrarPedidos();
     }
 
     public void MostrarPedidos()
     {
+        if (!RepairTrain.IsTrainRepaired) return;
         // Limpia pedidos previos
         foreach (Transform child in container)
         {

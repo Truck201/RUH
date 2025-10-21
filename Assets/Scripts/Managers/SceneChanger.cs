@@ -32,7 +32,7 @@ public class SceneChanger : MonoBehaviour
 
     private void LoadScene()
     {
-        PlayerStats.Instance.GuardarPosicion(playerPositionSave);
+        //PlayerStats.Instance.GuardarPosicion(playerPositionSave);
         Debug.Log($"Change Scene {sceneName}");
         SceneManager.LoadScene(sceneName);
     }

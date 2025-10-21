@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 [RequireComponent(typeof(Collider2D))]
 public class GiveVeggies : MonoBehaviour
@@ -14,7 +15,6 @@ public class GiveVeggies : MonoBehaviour
     public Sprite emptySprite;                   // sprite vacío (después de recolectar)
 
     [Header("Interacción")]
-    public KeyCode collectKey = KeyCode.E;       // tecla de recolección
     public GameObject interactIcon;
 
     [Header("Efecto de succión")]
@@ -27,7 +27,8 @@ public class GiveVeggies : MonoBehaviour
 
     private void Start()
     {
-        interactIcon.SetActive(false);
+        if (interactIcon)
+            interactIcon.SetActive(false);
     }
 
     private void Update()
@@ -35,8 +36,11 @@ public class GiveVeggies : MonoBehaviour
         if (collected || playerTransform == null)
             return;
 
+        if (GlobalInputManager.Instance == null)
+            return;
+
         // Mostrar interacción (opcional)
-        if (playerNear && Input.GetKeyDown(collectKey))
+        if (playerNear && GlobalInputManager.Instance.DeliverPressed())
         {
             StartCoroutine(CollectVeggie());
         }

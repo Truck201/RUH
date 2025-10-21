@@ -121,7 +121,16 @@ public class DialogueSystem : MonoBehaviour
             // 🔹 Mostrar texto
             dialoguePanel.SetActive(true);
             yield return StartCoroutine(TypeText(line.text));
-            yield return new WaitForSeconds(textDuration);
+
+            float timer = 0f;
+            bool passPressed = false;
+            while (timer < textDuration && !passPressed)
+            {
+                timer += Time.deltaTime;
+                if (GlobalInputManager.Instance.PassPressed())
+                    passPressed = true;
+                yield return null;
+            }
         }
 
         // 🔹 Apagar tutorial objects del último diálogo
@@ -138,11 +147,9 @@ public class DialogueSystem : MonoBehaviour
         dialogueActive = false;
 
         // 🔹 Pasar a la siguiente secuencia
-        if (dialoguePhase < 3)
-            dialoguePhase++;
+        if (dialoguePhase < 3) dialoguePhase++;
 
-        if (animator != null)
-            animator.Play("idle");
+        if (animator != null) animator.Play("idle");
 
         GameStateManager.Instance.SetState(GameState.Gameplay);
     }

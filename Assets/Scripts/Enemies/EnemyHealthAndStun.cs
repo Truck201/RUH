@@ -38,6 +38,9 @@ public class EnemyHealthAndStun : MonoBehaviour
         else
         {
             Stun();
+
+            if (SoundController.Instance != null)
+                SoundController.Instance.PlaySFX(SoundController.Instance.SFX_hitEnemy);
         }
     }
 
@@ -60,6 +63,9 @@ public class EnemyHealthAndStun : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("Die");
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_deathEnemy);
 
         // 🧩 Determinar qué objeto soltar
         GameObject dropPrefab = null;

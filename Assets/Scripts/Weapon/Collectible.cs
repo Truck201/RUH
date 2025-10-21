@@ -3,7 +3,8 @@ using UnityEngine;
 public enum CollectibleType
 {
     Stone,
-    Veggie
+    Veggie,
+    QuestItem
 }
 
 public class Collectible : MonoBehaviour

@@ -118,6 +118,9 @@ public class PedidoUI : MonoBehaviour
         }
         else
         {
+            if (SoundController.Instance != null)
+                SoundController.Instance.PlaySFX(SoundController.Instance.SFX_cannotDeliver);
+
             Debug.LogWarning("No tienes suficientes ingredientes para este pedido.");
             return false;
         }

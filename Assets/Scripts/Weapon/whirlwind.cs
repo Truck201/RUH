@@ -6,10 +6,11 @@ using UnityEngine;
 public class WhirlwindWeapon : MonoBehaviour
 {
     [Header("Vacuum Settings")]
-    public float suctionRadius = 3f;
     public Transform suctionPoint; // donde las piedras se �pegan�
-    public LayerMask stoneLayer;
     public float suctionForce = 5f;
+    public LayerMask stoneLayer;
+
+    private List<Collider2D> objectsInsideSuction = new List<Collider2D>();
 
     [Header("Vaccum Player - Object distance")]
     public float playerObjectVaccumDistance = 0.4f;
@@ -39,6 +40,8 @@ public class WhirlwindWeapon : MonoBehaviour
     private Transform currentTarget;
     private GameObject currentMarker;
 
+    private DynamicSortingOrder sortingOrder;
+
     private void Awake()
     {
         playerInputs = new PlayerInputs();
@@ -49,6 +52,8 @@ public class WhirlwindWeapon : MonoBehaviour
         playerInputs.Gameplay.Scope.performed += ctx => SwitchTarget();
 
         weaponAnimator = GetComponent<Animator>();
+
+        sortingOrder = GetComponent<DynamicSortingOrder>();
     }
     private void OnEnable()
     {
@@ -70,6 +75,18 @@ public class WhirlwindWeapon : MonoBehaviour
         if (isVacuuming)
         {
             Suction();
+        }
+
+        if (sortingOrder != null)
+        {
+            if (frontVaccum)
+            {
+                sortingOrder.offset = 1f; // Se va al fondo
+            }
+            else
+            {
+                sortingOrder.offset = -1f; // Vuelve al frente normal
+            }
         }
 
         if (currentTarget != null)
@@ -109,22 +126,23 @@ public class WhirlwindWeapon : MonoBehaviour
     {
         isVacuuming = false;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(suctionPoint.position, suctionRadius, stoneLayer);
-        foreach (var hit in hits)
+        foreach (var hit in objectsInsideSuction)
         {
             Rigidbody2D rb = hit.attachedRigidbody;
-            if (rb != null)
-            {
-                rb.linearVelocity = Vector2.zero;
-            }
+            if (rb != null) rb.linearVelocity = Vector2.zero;
         }
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_noAbsorb);
     }
     private void Suction()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(suctionPoint.position, suctionRadius, stoneLayer);
-        foreach (var hit in hits)
+        foreach (var hit in objectsInsideSuction.ToArray())
         {
+            if (hit == null) { objectsInsideSuction.Remove(hit); continue; }
+
             Rigidbody2D rb = hit.attachedRigidbody;
+
             if (rb == null) continue;
 
             Vector2 dir = ((Vector2)suctionPoint.position - rb.position).normalized;
@@ -149,10 +167,15 @@ public class WhirlwindWeapon : MonoBehaviour
                         case CollectibleType.Veggie:
                             PlayerStats.Instance.AddVeggie(c.itemName, c.itemIcon);
                             break;
+
+                        case CollectibleType.QuestItem:
+                            PlayerStats.Instance.AddQuestItem(c.itemName);
+                            break;
                     }
                 }
 
                 Destroy(rb.gameObject);
+                objectsInsideSuction.Remove(hit);
             }
         }
     }
@@ -166,8 +189,22 @@ public class WhirlwindWeapon : MonoBehaviour
 
         GameObject projectile = Instantiate(slot.projectilePrefab, suctionPoint.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        Vector2 shootDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+
+        Vector2 shootDirection;
+
+        // ✅ Si hay objetivo (scope auto-aim), disparamos hacia él
+        if (currentTarget != null)
+        {
+            shootDirection = (currentTarget.position - suctionPoint.position).normalized;
+        }
+        else
+        {
+            // ✅ Si NO hay objetivo, disparamos hacia donde mira el jugador / arma
+            shootDirection = transform.right; // O usa transform.up si tu mira es vertical
+        }
+
         rb.linearVelocity = shootDirection * shootForce;
+
 
         StoneProjectile sp = projectile.GetComponent<StoneProjectile>();
         sp.explosionDelay = projectileLifetime;
@@ -224,6 +261,9 @@ public class WhirlwindWeapon : MonoBehaviour
             currentMarker = Instantiate(aimMarkerPrefab, target.position + Vector3.up * 1.5f, Quaternion.identity);
         else if (currentMarker != null)
             currentMarker.transform.position = target.position + Vector3.up * 1.5f;
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_select);
     }
 
     private void ClearTarget()
@@ -235,12 +275,19 @@ public class WhirlwindWeapon : MonoBehaviour
 
         ToggleAttack(false);
     }
-    private void OnDrawGizmosSelected()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (suctionPoint != null)
+        if (((1 << other.gameObject.layer) & stoneLayer) != 0)
         {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(suctionPoint.position, suctionRadius);
+            if (!objectsInsideSuction.Contains(other))
+                objectsInsideSuction.Add(other);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (objectsInsideSuction.Contains(other))
+            objectsInsideSuction.Remove(other);
     }
 }

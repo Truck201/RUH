@@ -26,6 +26,9 @@ public class PlayerStats : MonoBehaviour
     public int experiencia = 0;
     public Image experienciaImage;
 
+    public int woodCount = 0;
+    public int metalCount = 0;
+
     [Header("Bool Level UP")]
     public bool levelUP = false;
     public bool levelCanvasActive = false;
@@ -75,6 +78,23 @@ public class PlayerStats : MonoBehaviour
     public void SetPlayer(Transform player) => playerTransform = player;
     public void SetCameraToPlayer(Transform cameraT) => cameraTransform = cameraT;
 
+    public void AddQuestItem(string itemName)
+    {
+        if (itemName == "Wood") woodCount++;
+        if (itemName == "Metal") metalCount++;
+        Debug.Log($"Recolectado {itemName} -> Wood:{woodCount} Metal:{metalCount}");
+    }
+    public bool HasRequiredTrainItems()
+    {
+        return woodCount >= 3 && metalCount >= 2;
+    }
+
+    public void ConsumeTrainItems()
+    {
+        woodCount -= 3;
+        metalCount -= 2;
+    }
+
     private void Update()
     {
         if (levelUP)
@@ -85,6 +105,9 @@ public class PlayerStats : MonoBehaviour
             experienciaLevel *= 1.3f;
             deliverManager.SetPedidosPorNivel(nivelActual);
             deliverManagerUI.MostrarPedidos();
+
+            if (SoundController.Instance != null)
+                SoundController.Instance.PlaySFX(SoundController.Instance.SFX_newLevel);
 
             Debug.Log($"|| Level UP {nivelActual} ||");
 
@@ -105,6 +128,9 @@ public class PlayerStats : MonoBehaviour
         levelCanvasActive = true;
 
         if (canvasLevelUp) canvasLevelUp.SetActive(true);
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_newLevel);
 
         if (canvasLevelText) canvasLevelText.text = $"Nivel {nivelActual}";
 
@@ -127,6 +153,9 @@ public class PlayerStats : MonoBehaviour
             levelUP = true;
         }
 
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_winExperience);
+
         experienciaImage.fillAmount = experiencia / experienciaLevel;
         Debug.Log($"|| Experiencia total: {experiencia} ||");
     }
@@ -138,6 +167,10 @@ public class PlayerStats : MonoBehaviour
             objetosAbsorbidos[nombre] = 0;
 
         objetosAbsorbidos[nombre] += cantidad;
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_pickup);
+
         Debug.Log($"Objeto {nombre}: {objetosAbsorbidos[nombre]}");
     }
 
@@ -166,6 +199,9 @@ public class PlayerStats : MonoBehaviour
 
     public bool UseStone(string stoneName, int amount = 1)
     {
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_shoot);
+
         return RemoveObjeto(stoneName, amount);
     }
 
@@ -206,6 +242,9 @@ public class PlayerStats : MonoBehaviour
             CollectibleManager.Instance.UpdateVeggieUI("Papa", null, GetObjetoCount("Papa"));
             CollectibleManager.Instance.UpdateVeggieUI("Cebolla", null, GetObjetoCount("Cebolla"));
         }
+
+        if (SoundController.Instance != null)
+            SoundController.Instance.PlaySFX(SoundController.Instance.SFX_delivered);
 
         AddExperience(pedido.experiencia);
         Debug.Log("Pedido entregado correctamente.");
