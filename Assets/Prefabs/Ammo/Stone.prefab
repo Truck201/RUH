@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5997993095744721824}
   - component: {fileID: 7262019215351589537}
   - component: {fileID: 4190121421660262147}
-  - component: {fileID: 2067549598797462526}
   - component: {fileID: 4047351598416522684}
   m_Layer: 3
   m_Name: Stone
@@ -200,22 +199,6 @@ MonoBehaviour:
   itemName: Stone
   itemIcon: {fileID: -8843831675877593866, guid: 1507234a97996c8469425bf193b8783a, type: 3}
   projectilePrefab: {fileID: 7658383522428676387}
---- !u!114 &2067549598797462526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658383522428676387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!114 &4047351598416522684
 MonoBehaviour:
   m_ObjectHideFlags: 0

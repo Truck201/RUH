@@ -11,10 +11,9 @@ public class GamePauseManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton persistente
-        if (GamePauseManager.Instance == null)
+        if (Instance == null)
         {
-            GamePauseManager.Instance = this;
+            Instance = this;
         }
         else
         {

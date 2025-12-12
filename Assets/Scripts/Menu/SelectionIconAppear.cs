@@ -27,20 +27,17 @@ public class SelectionIconAppear : MonoBehaviour
         if (iconPlay)
         {
             iconPlay.SetActive(selected == buttonPlay);
-            Debug.Log($"Icon Play --> {selected} && {buttonPlay}");
         }
 
         
         if (iconOptions)
         {
             iconOptions.SetActive(selected == buttonOptions);
-            Debug.Log($"Icon Options --> {selected} && {buttonOptions}");
         }
 
         if (iconExit)
         {
             iconExit.SetActive(selected == buttonExit);
-            Debug.Log($"Icon Exit --> {selected} && {buttonExit}");
         }
 
         if (GlobalInputManager.Instance.DeliverPressed()) // reemplazar con tu binding

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -15,6 +16,8 @@ public class GameStateManager : MonoBehaviour
     public GameState CurrentState { get; private set; } = GameState.Gameplay;
 
     public event System.Action<GameState> OnGameStateChanged;
+
+    public bool introCompletada = false;
 
     private void Awake()
     {

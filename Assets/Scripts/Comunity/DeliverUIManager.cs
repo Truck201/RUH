@@ -10,17 +10,29 @@ public class DeliverUIManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("Paso?");
-        if (RepairTrain.IsTrainRepaired)
+        if (PlayerStats.Instance.IsTrainRepaired)
             MostrarPedidos();
+    }
+
+    public void ContainerReferences()
+    {
+
+        if (!container) // GameObject
+        {
+            GameObject go = GameObject.Find("DeliversContainter");
+            Debug.Log("Canvas Level Up");
+            if (go) container = go.GetComponent<Transform>();
+        }
     }
 
     public void MostrarPedidos()
     {
-        if (!RepairTrain.IsTrainRepaired) return;
+        if (!PlayerStats.Instance.IsTrainRepaired) return;
         // Limpia pedidos previos
         foreach (Transform child in container)
         {
-            Destroy(child.gameObject);
+            if (child != null)
+                Destroy(child.gameObject);
         }
 
         // Instanciar los 3 pedidos actuales

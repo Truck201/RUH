@@ -167,4 +167,26 @@ public class GlobalInputManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        inputs.Enable();
+    }
+
+    private void OnDisable()
+    {
+        if (inputs != null)
+            inputs.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        var player = inputs;
+
+        // Gameplay
+        player.Gameplay.Move.performed -= ctx => { Move = ctx.ReadValue<Vector2>(); DetectDevice(ctx); };
+        player.Gameplay.Move.canceled -= ctx => Move = Vector2.zero;
+        // Repetir para cada acción...
+
+        player.Disable();
+    }
 }

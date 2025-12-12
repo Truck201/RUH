@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: aaebfc919f50f6240a535b0a80a9db66
   - enabled: 1
+    path: Assets/Scenes/Cartoon/CartoonedStart.unity
+    guid: 4293c3e01d8b6ea4d8736fafd6436e00
+  - enabled: 1
     path: Assets/Scenes/Farm/Farm.unity
     guid: 88432d3ead6af4b4a804fc178e8deea3
   - enabled: 1

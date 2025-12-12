@@ -19,9 +19,13 @@ public class SceneChanger : MonoBehaviour
         hasChanged = true;
 
         if (delay > 0f)
+        {
             StartCoroutine(DelayedSceneLoad());
+        }   
         else
+        {
             LoadScene();
+        }
     }
 
     private IEnumerator DelayedSceneLoad()
@@ -32,8 +36,13 @@ public class SceneChanger : MonoBehaviour
 
     private void LoadScene()
     {
-        //PlayerStats.Instance.GuardarPosicion(playerPositionSave);
         Debug.Log($"Change Scene {sceneName}");
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void TerminarIntro()
+    {
+        GameStateManager.Instance.introCompletada = true;
+        SceneManager.LoadScene("Farm");
     }
 }

@@ -129,9 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 29183809}
   - component: {fileID: 29183811}
-  - component: {fileID: 29183810}
   m_Layer: 0
-  m_Name: "Vi\xF1eta_6"
+  m_Name: "Vi\xF1eta_5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,35 +145,13 @@ Transform:
   m_GameObject: {fileID: 29183808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 213, y: 123, z: -9714.272}
-  m_LocalScale: {x: 1.26, y: 1.26, z: 1.26}
+  m_LocalPosition: {x: 0, y: 167, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 481116798}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &29183810
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29183808}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &29183811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -240,7 +217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 66158088}
   - component: {fileID: 66158090}
-  - component: {fileID: 66158089}
   m_Layer: 0
   m_Name: "Vi\xF1eta_3"
   m_TagString: Untagged
@@ -257,35 +233,13 @@ Transform:
   m_GameObject: {fileID: 66158087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 332, y: 366, z: -9714.272}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 302.2, y: 392.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1155319322}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &66158089
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66158087}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &66158090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -351,7 +305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 90489876}
   - component: {fileID: 90489878}
-  - component: {fileID: 90489877}
   m_Layer: 0
   m_Name: "Vi\xF1eta_1"
   m_TagString: Untagged
@@ -368,35 +321,13 @@ Transform:
   m_GameObject: {fileID: 90489875}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -395, y: 360, z: -9714.272}
-  m_LocalScale: {x: 1.38, y: 1.38, z: 1.38}
+  m_LocalPosition: {x: -235.2, y: 392.51, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 317544402}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &90489877
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90489875}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &90489878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -462,7 +393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 315990809}
   - component: {fileID: 315990811}
-  - component: {fileID: 315990810}
   m_Layer: 0
   m_Name: "Vi\xF1eta_8"
   m_TagString: Untagged
@@ -479,35 +409,13 @@ Transform:
   m_GameObject: {fileID: 315990808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -772, y: -261, z: -9714.272}
+  m_LocalPosition: {x: -350.7, y: -397.6, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1389299260}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &315990810
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315990808}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &315990811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -606,7 +514,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 07cadea2d3d200742ac280b697172760, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -718,7 +626,7 @@ Transform:
   m_GameObject: {fileID: 481116797}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -482.53976, y: 188.09528, z: -0.0007750497}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0007750497}
   m_LocalScale: {x: 1.095009, y: 1.095009, z: 1.095009}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -735,7 +643,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: f03990576f500db4281b128895a3197b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -831,6 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558244274}
   - component: {fileID: 558244273}
+  - component: {fileID: 558244275}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -851,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Farm
-  delay: 0
+  delay: 1
   playerPositionSave: {x: 0, y: 0, z: 0}
 --- !u!4 &558244274
 Transform:
@@ -868,6 +777,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558244275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558244272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: fccfb375fe6e63542b253ffffcb1629d, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 558244273}
+          m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+          m_MethodName: TerminarIntro
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &790304393
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +817,6 @@ GameObject:
   m_Component:
   - component: {fileID: 790304394}
   - component: {fileID: 790304396}
-  - component: {fileID: 790304395}
   m_Layer: 0
   m_Name: "Vi\xF1eta_7"
   m_TagString: Untagged
@@ -895,35 +833,13 @@ Transform:
   m_GameObject: {fileID: 790304393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59, y: -197, z: -9714.272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -111.6, z: 0}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1938443736}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &790304395
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790304393}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &790304396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1078,9 +994,9 @@ RectTransform:
   - {fileID: 90489876}
   - {fileID: 1759377015}
   - {fileID: 66158088}
-  - {fileID: 1948877142}
   - {fileID: 1264268870}
   - {fileID: 29183809}
+  - {fileID: 1948877142}
   - {fileID: 790304394}
   - {fileID: 315990809}
   - {fileID: 1900506472}
@@ -1118,7 +1034,7 @@ Transform:
   m_GameObject: {fileID: 848611925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -271.6667, y: -24.16664, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1135,7 +1051,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 5e4fa18bb7e4da64cb17beae0db78004, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1410,25 +1326,25 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -5895940487977424805, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 1759377016}
+    value: {fileID: 0}
   - key: {fileID: -282213808708225309, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 90489877}
+    value: {fileID: 0}
   - key: {fileID: 6135155152993515438, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 66158089}
+    value: {fileID: 0}
   - key: {fileID: 5969862808296410879, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 1948877143}
+    value: {fileID: 0}
   - key: {fileID: -5438749706150802463, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 1264268871}
+    value: {fileID: 0}
   - key: {fileID: -3312071770242837002, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 29183810}
+    value: {fileID: 0}
   - key: {fileID: -5667647672191914642, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 790304395}
+    value: {fileID: 0}
   - key: {fileID: 8947439035495046379, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 315990810}
+    value: {fileID: 0}
   - key: {fileID: -971760520203918059, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 1900506473}
+    value: {fileID: 0}
   - key: {fileID: 4509561324774351913, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
-    value: {fileID: 2007708784}
+    value: {fileID: 0}
   - key: {fileID: -7450730368276770262, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
     value: {fileID: 90489875}
   - key: {fileID: 5354908026195048152, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
@@ -1449,6 +1365,8 @@ PlayableDirector:
     value: {fileID: 1900506471}
   - key: {fileID: -1118135233334742101, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
     value: {fileID: 2007708782}
+  - key: {fileID: -2748003601179943294, guid: 4aca205a81b11de45a53386826ac57ef, type: 2}
+    value: {fileID: 558244275}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1155319321
@@ -1477,7 +1395,7 @@ Transform:
   m_GameObject: {fileID: 1155319321}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -605.8333, y: -4.9999743, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1494,7 +1412,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 035d45b8f11f4f14db95fce92416dd79, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1590,9 +1508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1264268870}
   - component: {fileID: 1264268872}
-  - component: {fileID: 1264268871}
   m_Layer: 0
-  m_Name: "Vi\xF1eta_5"
+  m_Name: "Vi\xF1eta_4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1607,35 +1524,13 @@ Transform:
   m_GameObject: {fileID: 1264268869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -119, y: 130, z: -9714.272}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: -277.8, y: 163.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1338892949}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1264268871
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264268869}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1264268872
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1717,7 +1612,7 @@ Transform:
   m_GameObject: {fileID: 1292126594}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -744.1667, y: 580.00006, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1734,7 +1629,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 9f0b8386b969cd949b5f2d65983a85fd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1846,7 +1741,7 @@ Transform:
   m_GameObject: {fileID: 1338892948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -230.00003, y: 191.66667, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1863,7 +1758,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: aa368ce2c9f8569459e68ea97d4e3914, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1975,7 +1870,7 @@ Transform:
   m_GameObject: {fileID: 1389299259}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 314.1665, y: 517.50006, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1992,7 +1887,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 4bf4bacacc588ed44977b07ee6028877, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2226,6 +2121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1623733633}
+  - component: {fileID: 1623733634}
   m_Layer: 0
   m_Name: SoundsManager
   m_TagString: Untagged
@@ -2248,6 +2144,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1623733634
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623733632}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8525433856338626002, guid: 2bfc97ea29ca9504dafab68f769b98b8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1704582024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2274,7 +2267,7 @@ Transform:
   m_GameObject: {fileID: 1704582024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49.16661, y: 248.33333, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2291,7 +2284,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: dcb59026d26f74d48b6f01c584930a3e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2387,7 +2380,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1759377015}
   - component: {fileID: 1759377017}
-  - component: {fileID: 1759377016}
   m_Layer: 0
   m_Name: "Vi\xF1eta_2"
   m_TagString: Untagged
@@ -2404,35 +2396,13 @@ Transform:
   m_GameObject: {fileID: 1759377014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69, y: 389, z: -9714.272}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: 409.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 848611926}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1759377016
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759377014}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1759377017
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2514,7 +2484,7 @@ Transform:
   m_GameObject: {fileID: 1882480892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -818.3334, y: 279.16675, z: -0.000813802}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000813802}
   m_LocalScale: {x: 1.1497593, y: 1.1497593, z: 1.1497593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2531,7 +2501,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: ec7470527498f2a4b90db0538373d03e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2627,7 +2597,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1900506472}
   - component: {fileID: 1900506474}
-  - component: {fileID: 1900506473}
   m_Layer: 0
   m_Name: "Vi\xF1eta_9"
   m_TagString: Untagged
@@ -2644,35 +2613,13 @@ Transform:
   m_GameObject: {fileID: 1900506471}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 587, y: 25, z: -9714.272}
+  m_LocalPosition: {x: 0, y: -394.4, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1882480893}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1900506473
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900506471}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1900506474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2754,7 +2701,7 @@ Transform:
   m_GameObject: {fileID: 1938443735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -454.00015, y: 557.0001, z: -0.0009765625}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0009765625}
   m_LocalScale: {x: 1.3797113, y: 1.3797113, z: 1.3797113}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2771,7 +2718,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 0549953c9b774d840aa3740c6ca3a1e6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2867,9 +2814,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1948877142}
   - component: {fileID: 1948877144}
-  - component: {fileID: 1948877143}
   m_Layer: 0
-  m_Name: "Vi\xF1eta_4"
+  m_Name: "Vi\xF1eta_6"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2884,35 +2830,13 @@ Transform:
   m_GameObject: {fileID: 1948877141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -454, y: 62, z: -9714.272}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 207, y: 175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1704582025}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1948877143
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948877141}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1948877144
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2978,7 +2902,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2007708783}
   - component: {fileID: 2007708785}
-  - component: {fileID: 2007708784}
   m_Layer: 0
   m_Name: "Vi\xF1eta_10"
   m_TagString: Untagged
@@ -2995,35 +2918,13 @@ Transform:
   m_GameObject: {fileID: 2007708782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 498, y: -336, z: -9714.272}
+  m_LocalPosition: {x: 271.4, y: -390.7, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1292126595}
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2007708784
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007708782}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &2007708785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3089,7 +2990,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2118349621}
   - component: {fileID: 2118349620}
-  - component: {fileID: 2118349622}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -3161,34 +3061,12 @@ Transform:
   m_GameObject: {fileID: 2118349619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.794295, y: 0, z: -9714.272}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 792619836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2118349622
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118349619}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97d4142ebba70e84699ab8a80d2f756a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

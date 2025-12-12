@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 558244274}
   - component: {fileID: 558244273}
   - component: {fileID: 558244275}
+  - component: {fileID: 558244276}
+  - component: {fileID: 558244277}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -149,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d89dfdc69f459d4697bdfa8a231fa43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Farm
+  sceneName: CartoonedStart
   delay: 0
   playerPositionSave: {x: 0, y: 0, z: 0}
 --- !u!4 &558244274
@@ -186,6 +188,30 @@ MonoBehaviour:
   iconOptions: {fileID: 0}
   iconExit: {fileID: 927659549}
   sceneChanger: {fileID: 558244273}
+--- !u!114 &558244276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558244272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9f87db52d1c974bbcbd6c4833caecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &558244277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558244272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20920f1be9eddb3458e9e6f17b4214cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &735702524
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,9 +965,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 558244273}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
+      - m_Target: {fileID: 558244276}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: Jugar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1180,7 +1206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 779825142}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558244277}
+        m_TargetAssemblyTypeName: OutGame, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2118349619
 GameObject:
   m_ObjectHideFlags: 0

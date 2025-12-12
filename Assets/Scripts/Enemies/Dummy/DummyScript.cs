@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DummyScript : MonoBehaviour
 {
-
     private bool inRange;
 
     [Header("Interacción")]

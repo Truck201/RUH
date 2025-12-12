@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GeneralInterface : MonoBehaviour
 {
+    public static GeneralInterface Instance;
     [Header("General bar")]
     [SerializeField] private Image energyBar;
 
@@ -31,6 +32,16 @@ public class GeneralInterface : MonoBehaviour
 
     private void Awake()
     {
+        if (GeneralInterface.Instance == null)
+        {
+            GeneralInterface.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         if (!playerStats)
             playerStats = FindFirstObjectByType<PlayerStats>();
 
@@ -82,7 +93,11 @@ public class GeneralInterface : MonoBehaviour
             playerStats.experienciaImage.fillAmount = playerStats.experiencia / playerStats.experienciaLevel;
 
         if (experienceText)
-            experienceText.SetText($"{playerStats.experiencia}/{playerStats.experienciaLevel}");
+        {
+            var percent = playerStats.experiencia / playerStats.experienciaLevel * 100;
+            experienceText.SetText($"{percent}%");
+        }
+            
     }
 
     private void UpdateCurrentEstamina()

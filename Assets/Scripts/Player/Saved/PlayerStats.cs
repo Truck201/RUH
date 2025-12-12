@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("UI Level Up")]
     [SerializeField] private GameObject canvasLevelUp;
+    [SerializeField] TMP_Text canvasTitleText;
     [SerializeField] TMP_Text canvasLevelText;
     [SerializeField] TMP_Text levelCountActual;
 
@@ -33,8 +34,17 @@ public class PlayerStats : MonoBehaviour
     public bool levelUP = false;
     public bool levelCanvasActive = false;
 
-    [SerializeField] private DeliverManager deliverManager;
-    [SerializeField] private DeliverUIManager deliverManagerUI;
+    [Header("References")]
+    [SerializeField] DialogueSystem dialogue;
+    [SerializeField] blockAccess blocker;
+    [SerializeField] DeliverManager deliverManager;
+    [SerializeField] DeliverUIManager deliverManagerUI;
+
+    [Header("En Caverna?")]
+    public bool isInCavern = false;
+
+    [Header("Train Repaired?")]
+    public bool IsTrainRepaired = false;
 
     [Header("Inventario de Objetos")]
     public Dictionary<string, int> objetosAbsorbidos = new Dictionary<string, int>();
@@ -44,6 +54,16 @@ public class PlayerStats : MonoBehaviour
     private string lastSceneName;
     private Transform playerTransform;
     private Transform cameraTransform;
+
+    private string[] CanvasLevelTitle = new string[]
+    {
+        "Bien",
+        "Grandioso",
+        "Genial",
+        "Que Grande",
+        "WOOOW",
+        "Increible"
+    };
 
     private void Awake()
     {
@@ -57,25 +77,13 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (canvasLevelUp) canvasLevelUp.SetActive(false);
-        if (levelCountActual) levelCountActual.SetText($"{nivelActual}");
-        if (experienciaImage) experienciaImage.fillAmount = experiencia / experienciaLevel;
-
-        if (!deliverManager) FindFirstObjectByType(typeof(DeliverManager));
-        if (!deliverManagerUI) FindFirstObjectByType(typeof(DeliverUIManager));
-
-        // 👇 Suscribirse al evento de cambio de escena
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnDestroy()
+    private void Start()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        blocker?.ActivateBlock();
     }
 
-    // 🔹 Método público para asignar el Player
-    public void SetPlayer(Transform player) => playerTransform = player;
     public void SetCameraToPlayer(Transform cameraT) => cameraTransform = cameraT;
 
     public void AddQuestItem(string itemName)
@@ -109,6 +117,13 @@ public class PlayerStats : MonoBehaviour
             deliverManager.SetPedidosPorNivel(nivelActual);
             deliverManagerUI.MostrarPedidos();
 
+            if (nivelActual == 2 && !dialogue.canAccessCavern)
+            {
+                dialogue.canAccessCavern = true;
+                dialogue.NextDialogue();
+                blocker?.DisableBlock();
+            }
+
             if (SoundController.Instance != null)
                 SoundController.Instance.PlaySFX(SoundController.Instance.SFX_newLevel);
 
@@ -136,6 +151,10 @@ public class PlayerStats : MonoBehaviour
             SoundController.Instance.PlaySFX(SoundController.Instance.SFX_newLevel);
 
         if (canvasLevelText) canvasLevelText.text = $"Nivel {nivelActual}";
+
+        int range = UnityEngine.Random.Range(0, CanvasLevelTitle.Length);
+
+        if (canvasTitleText) canvasTitleText.SetText($"¡{CanvasLevelTitle[range]}!");
 
         if (levelCountActual) levelCountActual.SetText($"{nivelActual}");
 
@@ -253,31 +272,59 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Pedido entregado correctamente.");
     }
 
-
-    // 🔹 Guardar posición actual antes de cambiar de escena
-    public void GuardarPosicion(Vector3 playerPositionSave)
+    public void ReferencesObjects()
     {
-        if (playerTransform == null) return;
-        lastSavedPosition = playerPositionSave;   // playerTransform.position
-        lastSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log($"📍 Posición guardada: {lastSavedPosition}");
-    }
+        if (dialogue == null)
+            dialogue = Object.FindAnyObjectByType<DialogueSystem>();
 
-    // 🔹 Restaurar posición al cargar escena
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (playerTransform == null)
-            return;
+        if (blocker == null)
+            blocker = Object.FindAnyObjectByType<blockAccess>();
 
-        // Solo restaurar si es la misma escena de donde saliste
-        if (scene.name == lastSceneName && lastSavedPosition != Vector3.zero)
+        if (deliverManager == null)
+            deliverManager = Object.FindAnyObjectByType<DeliverManager>();
+
+        if (deliverManagerUI == null)
+            deliverManagerUI = Object.FindAnyObjectByType<DeliverUIManager>();
+
+        if (!canvasLevelUp) // GameObject
         {
-            playerTransform.position = lastSavedPosition;
-            cameraTransform.position = lastSavedPosition;
-            Debug.Log($"📍 Posición restaurada: {playerTransform.position}");
-
-            if (!deliverManager) FindFirstObjectByType(typeof(DeliverManager));
-            if (!deliverManagerUI) FindFirstObjectByType(typeof(DeliverUIManager));
+            GameObject go = GameObject.Find("LevelUpCanvas");
+            Debug.Log("Canvas Level Up");
+            if (go) canvasLevelUp = go;
         }
+
+        if (!canvasTitleText)
+        {
+            GameObject go = GameObject.Find("Comentario");
+            Debug.Log("Canvas Title Text");
+            if (go) canvasTitleText = go.GetComponent<TMP_Text>();
+        }
+
+        if (!canvasLevelText)
+        {
+            GameObject go = GameObject.Find("LevelText");
+            Debug.Log("Canvas Level Text");
+            if (go) canvasLevelText = go.GetComponent<TMP_Text>();
+        }
+
+        if (!levelCountActual)
+        {
+            GameObject go = GameObject.Find("LevelCount");
+            Debug.Log("Level Count Actual");
+            if (go) levelCountActual = go.GetComponent<TMP_Text>();
+        }
+
+        if (!experienciaImage)
+        {
+            GameObject go = GameObject.Find("Experiencia");
+            Debug.Log("Experiencia Image");
+            if (go) experienciaImage = go.GetComponent<Image>();
+        }
+
+        if (canvasLevelUp) canvasLevelUp.SetActive(false);
+        if (canvasTitleText) canvasTitleText.SetText($"¡{CanvasLevelTitle[0]}!");
+        if (levelCountActual) levelCountActual.SetText($"{nivelActual}");
+        if (experienciaImage) experienciaImage.fillAmount = experiencia / experienciaLevel;
     }
+
 }

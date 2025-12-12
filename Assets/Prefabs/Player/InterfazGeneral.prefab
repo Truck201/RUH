@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBar: {fileID: 0}
-  health_1: {fileID: 0}
+  health_1: {fileID: 4714918264829038825}
   health_2: {fileID: 0}
   health_3: {fileID: 0}
   health_4: {fileID: 0}

@@ -12,12 +12,16 @@ public class DialogueSystem : MonoBehaviour
     public Image npcPortrait;
 
     private SpriteRenderer sprite;
-    private Animator animator;    
+    private Animator animator;
+
+    [Header("Exclamation New Dialog")]
+    public GameObject newDialog;
 
     [Header("Secuencias de diálogo")]
     public DialogueLine[] dialogueLinesSet1;
     public DialogueLine[] dialogueLinesSet2;
     public DialogueLine[] dialogueLinesSet3;
+    public DialogueLine[] dialogueLinesSet4;
     public DialogueLine[] defaultDialogueLines;
 
     [Header("Configuración general")]
@@ -31,6 +35,8 @@ public class DialogueSystem : MonoBehaviour
     private bool dialogueActive;
     private int dialoguePhase = 0; // controla en qué secuencia va el jugador
 
+    public bool canAccessCavern = false;
+
     [Header("Interacción")]
     public GameObject interactIcon;
 
@@ -43,6 +49,7 @@ public class DialogueSystem : MonoBehaviour
         if (camFollow == null)
             Debug.LogError("No se encontró SmoothCameraFollow en la cámara principal");
 
+        newDialog.SetActive(true);
         dialoguePanel.SetActive(false);
         interactIcon.SetActive(false);
     }
@@ -66,6 +73,7 @@ public class DialogueSystem : MonoBehaviour
             case 0: return dialogueLinesSet1;
             case 1: return dialogueLinesSet2;
             case 2: return dialogueLinesSet3;
+            case 3: return dialogueLinesSet4;
             default: return defaultDialogueLines;
         }
     }
@@ -81,6 +89,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueActive = true;
         interactIcon.SetActive(false);
         GameStateManager.Instance.SetState(GameState.Dialogue);
+        newDialog.SetActive(false);
 
         playerTransform = camFollow.target;
 
@@ -147,7 +156,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueActive = false;
 
         // 🔹 Pasar a la siguiente secuencia
-        if (dialoguePhase < 3) dialoguePhase++;
+        if (dialoguePhase >= 2 && dialoguePhase < 6) NextDialogue(); // Controlar paso de frases || Crear booleanos con las condiciones
 
         if (animator != null) animator.Play("idle");
 
@@ -162,6 +171,18 @@ public class DialogueSystem : MonoBehaviour
             dialogueText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
+    }
+
+    public void NextDialogue()
+    {
+        dialoguePhase++;
+        Debug.Log($"Next Dialogue actual {dialoguePhase} - Last {dialoguePhase-1}");
+        newDialog.SetActive(true);
+    }
+
+    private void AvanceDialoguePhase(int current)
+    {
+       if (current <= 3) current++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

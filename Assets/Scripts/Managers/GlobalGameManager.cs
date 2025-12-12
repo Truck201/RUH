@@ -22,6 +22,8 @@ public class GlobalGameManager : MonoBehaviour
     [Header("Scene Name")]
     public string SceneName;
 
+    private PlayerMovement player;
+
     private void Awake()
     {
         // Singleton persistente
@@ -36,6 +38,8 @@ public class GlobalGameManager : MonoBehaviour
 
         //pauseCanvas = GameObject.Find("PauseCanvas");
         //firstPauseSelected =   GameObject.Find("ResumePauseText");
+        player = FindAnyObjectByType<PlayerMovement>();
+        PlayerStats.Instance.ReferencesObjects();
         pauseCanvas.SetActive(false);
     }
 
@@ -55,6 +59,7 @@ public class GlobalGameManager : MonoBehaviour
                 return;
             case "ExtendsCaves":
                 SoundController.Instance.PlayAmbientLoop(SoundController.Instance.SFX_wind_ambient_caves_0);
+                PlayerStats.Instance.isInCavern = true;
                 return;
         }
 

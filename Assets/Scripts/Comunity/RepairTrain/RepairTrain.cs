@@ -20,10 +20,13 @@ public class RepairTrain : MonoBehaviour
     public Image woodIconUI;
     public Image metalIconUI;
 
+    private bool trainRepaired = false;
+
     public Sprite woodSprite; // Icono de madera
     public Sprite metalSprite; // Icono de metal
 
-    public static bool IsTrainRepaired = false;
+    [Header("References")]
+    [SerializeField] DialogueSystem dialogue;
 
     private SpriteRenderer spriteRenderer;
     private GameObject player;
@@ -37,9 +40,17 @@ public class RepairTrain : MonoBehaviour
         resourcesUI.SetActive(false);
     }
 
+    private void Start()
+    {
+        if (PlayerStats.Instance.IsTrainRepaired)
+        {
+            startRepaired();
+        }
+    }
+
     private void Update()
     {
-        if (IsTrainRepaired) return;
+        if (PlayerStats.Instance.IsTrainRepaired)  return;
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
@@ -93,19 +104,33 @@ public class RepairTrain : MonoBehaviour
     {
         // ✅ Consumir recursos
         PlayerStats.Instance.ConsumeTrainItems();
+        PlayerStats.Instance.IsTrainRepaired = true;
 
         if (SoundController.Instance != null)
             SoundController.Instance.PlaySFX(SoundController.Instance.SFX_repairTrain);
 
-        IsTrainRepaired = true;
         spriteRenderer.sprite = spriteRepaired;
         entregaButtonUI.SetActive(false);
         resourcesUI.SetActive(false);
+
+        dialogue.NextDialogue();
 
         Debug.Log("🚂 Tren reparado — ahora se pueden entregar pedidos.");
 
         // ✅ Mostrar pedidos en la UI
         var uiManager = FindFirstObjectByType<DeliverUIManager>();
+        if (uiManager != null)
+            uiManager.MostrarPedidos();
+    }
+    
+    private void startRepaired()
+    {
+        spriteRenderer.sprite = spriteRepaired;
+        entregaButtonUI.SetActive(false);
+        resourcesUI.SetActive(false);
+
+        var uiManager = FindFirstObjectByType<DeliverUIManager>();
+        uiManager.ContainerReferences();
         if (uiManager != null)
             uiManager.MostrarPedidos();
     }

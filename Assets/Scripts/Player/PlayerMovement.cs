@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem; // Nuevo sistema de inputs
@@ -6,7 +7,7 @@ using UnityEngine.InputSystem; // Nuevo sistema de inputs
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerInputs playerInputs;
+    private PlayerInputs playerInputs => InputContextManager.Instance.Inputs;
     private SpriteRenderer spriteRenderer;
 
     [Header("Velocidades")]
@@ -20,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     private float currentStamina;
     private bool exhausted; // 🔹 si se vacía, no puede correr hasta que recupere
 
+    [Header("Player Points Locations")]
+    public Transform playerSpawnpointStarter;
+    public Transform playerCaveOut;
+
+    [Header("Movement")]
     public Vector2 moveInput;
     public float runInput;
 
@@ -27,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public bool isRunning;
 
-    public bool isOnStairs = false;
-    [SerializeField] private SceneChanger currentStair;
     [SerializeField] WhirlwindWeapon weapon;
 
     private bool spriteUp;
@@ -36,12 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if (GamePauseManager.Instance.IsPaused)
-        {
-            GamePauseManager.Instance.TogglePause();
-        }
         spriteRenderer = GetComponent<SpriteRenderer>();
-        playerInputs = new PlayerInputs();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false; // Necesario para 2D
@@ -55,21 +54,41 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         if (PlayerStats.Instance != null)
-            PlayerStats.Instance.SetPlayer(this.transform);
+        {
+            Transform player = GetComponent<Transform>();
+
+            if (PlayerStats.Instance.isInCavern)
+            {
+                PlayerStats.Instance.isInCavern = false;
+                Debug.Log("Appear Out of Cavern");
+
+                Transform pos = playerCaveOut.GetComponent<Transform>();
+                player.position = new Vector3(pos.position.x, pos.position.y, 0f);
+            } else
+            {
+                Transform pos = playerSpawnpointStarter.GetComponent<Transform>();
+                player.position = new Vector3(pos.position.x, pos.position.y, 0f);
+            }
+        }
+
+        if (GamePauseManager.Instance != null)
+        {
+            if (GamePauseManager.Instance.IsPaused) GamePauseManager.Instance.TogglePause();
+        }
     }
 
     private void Update()
     {
         if (GamePauseManager.Instance.IsPaused) 
         {
-            if (animator != null)
-            {
-                animator.SetFloat("Speed", 0);
-                agent.velocity = Vector3.zero;
-                if (agent.isOnNavMesh)
-                    agent.ResetPath();
-                Debug.Log("Pausadoo!!");
-            }
+            //if (animator != null)
+            //{
+            //    animator.SetFloat("Speed", 0);
+            //    agent.velocity = Vector3.zero;
+            //    if (agent.isOnNavMesh)
+            //        agent.ResetPath();
+            //    //Debug.Log("Pausadoo!!");
+            //}
                 return;
         } 
         moveInput = playerInputs.Gameplay.Move.ReadValue<Vector2>();
@@ -173,6 +192,11 @@ public class PlayerMovement : MonoBehaviour
         //}
     }
 
+    public void noMovement()
+    {
+        agent.velocity = Vector3.zero;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         SceneChanger sceneChanger = other.GetComponent<SceneChanger>();
@@ -204,9 +228,6 @@ public class PlayerMovement : MonoBehaviour
     //}
 
     public float GetStaminaNormalized() => currentStamina / maxStamina;
-
-    private void OnEnable() => playerInputs.Enable();
-    private void OnDisable() => playerInputs.Disable();
 
     public float getSpriteDirection() => moveInput.x;
 

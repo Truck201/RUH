@@ -39,6 +39,8 @@ public class GiveVeggies : MonoBehaviour
         if (GlobalInputManager.Instance == null)
             return;
 
+        if (!PlayerStats.Instance.IsTrainRepaired) return;
+
         // Mostrar interacción (opcional)
         if (playerNear && GlobalInputManager.Instance.DeliverPressed())
         {
@@ -92,8 +94,10 @@ public class GiveVeggies : MonoBehaviour
         // Si querés que desaparezca el objeto físico:
         // Destroy(gameObject);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!PlayerStats.Instance.IsTrainRepaired) return;
         if (collision.CompareTag("Player"))
         {
             playerNear = true;
@@ -102,6 +106,7 @@ public class GiveVeggies : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!PlayerStats.Instance.IsTrainRepaired) return;
         if (collision.CompareTag("Player"))
         {
             playerNear = false;
