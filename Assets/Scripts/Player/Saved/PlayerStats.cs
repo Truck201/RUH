@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] TMP_Text levelCountActual;
 
     [Header("Experiencia del Jugador")]
-    public float experienciaLevel = 50;
+    public int experienciaLevel = 50;
     public int experiencia = 0;
     public Image experienciaImage;
 
@@ -48,6 +48,10 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Inventario de Objetos")]
     public Dictionary<string, int> objetosAbsorbidos = new Dictionary<string, int>();
+
+    [Header("Start Game Tutorial")]
+    public bool activeTutorialStarter = true;
+    public GameObject canvasTutorial;
 
     // 👇 NUEVO: Guardar posición
     private Vector3 lastSavedPosition;
@@ -82,6 +86,12 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         blocker?.ActivateBlock();
+
+        if (activeTutorialStarter && canvasTutorial)
+        {
+            StartCoroutine(CanvasTutorial());
+            activeTutorialStarter = false;
+        }
     }
 
     public void SetCameraToPlayer(Transform cameraT) => cameraTransform = cameraT;
@@ -113,7 +123,7 @@ public class PlayerStats : MonoBehaviour
             levelUP = false;
             nivelActual += 1;
             experiencia = 0;
-            experienciaLevel *= 1.3f;
+            experienciaLevel *= 4 / 3;
             deliverManager.SetPedidosPorNivel(nivelActual);
             deliverManagerUI.MostrarPedidos();
 
@@ -271,6 +281,19 @@ public class PlayerStats : MonoBehaviour
         AddExperience(pedido.experiencia);
         Debug.Log("Pedido entregado correctamente.");
     }
+
+    private IEnumerator CanvasTutorial()
+    {   
+        GameStateManager.Instance.SetState(GameState.Dialogue);
+        canvasTutorial.SetActive(true);
+
+        //yield return new WaitForSeconds(2f);
+        yield return new WaitUntil(() => GlobalInputManager.Instance.PassPressed());
+
+        GameStateManager.Instance.SetState(GameState.Gameplay);
+        canvasTutorial.SetActive(false);
+    }
+
 
     public void ReferencesObjects()
     {

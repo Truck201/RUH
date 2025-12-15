@@ -60,7 +60,7 @@ public class UIButtonPrompt : MonoBehaviour
                 break;
 
             case ButtonActionType.Attack:
-                selectedController = usingGamepad ? X_button : MouseLeft_button;
+                selectedController = usingGamepad ? X_button : MouseRight_button;
                 break;
 
             case ButtonActionType.Run:
@@ -72,7 +72,7 @@ public class UIButtonPrompt : MonoBehaviour
                 break;
 
             case ButtonActionType.Vaccum:
-                selectedController = usingGamepad ? O_button : MouseRight_button;
+                selectedController = usingGamepad ? O_button : MouseLeft_button; 
                 break;
 
             case ButtonActionType.MoveUp:
@@ -93,5 +93,10 @@ public class UIButtonPrompt : MonoBehaviour
         {
             animator.runtimeAnimatorController = selectedController;
         }
+    }
+
+    public void SwitchButtonActionType(ButtonActionType newActionType)
+    {
+        actionType = newActionType;
     }
 }

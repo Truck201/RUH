@@ -39,127 +39,127 @@ MonoBehaviour:
       cebollas: 0
       experiencia: 10
   - pedidos:
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+    - zanahorias: 2
+      papas: 0
+      cebollas: 0
+      experiencia: 10
+  - pedidos:
+    - zanahorias: 5
+      papas: 0
+      cebollas: 2
+      experiencia: 25
+    - zanahorias: 5
+      papas: 0
+      cebollas: 2
+      experiencia: 25
+    - zanahorias: 5
+      papas: 0
+      cebollas: 2
+      experiencia: 25
+    - zanahorias: 6
+      papas: 0
+      cebollas: 4
+      experiencia: 30
+    - zanahorias: 6
+      papas: 0
+      cebollas: 4
+      experiencia: 30
     - zanahorias: 6
       papas: 0
       cebollas: 0
-      experiencia: 20
-    - zanahorias: 5
-      papas: 0
-      cebollas: 0
-      experiencia: 20
-    - zanahorias: 5
-      papas: 0
-      cebollas: 0
-      experiencia: 20
-    - zanahorias: 4
-      papas: 0
-      cebollas: 0
-      experiencia: 20
-    - zanahorias: 4
-      papas: 0
-      cebollas: 0
-      experiencia: 20
-    - zanahorias: 7
-      papas: 0
-      cebollas: 0
-      experiencia: 20
+      experiencia: 30
   - pedidos:
     - zanahorias: 8
       papas: 0
       cebollas: 2
       experiencia: 50
     - zanahorias: 7
-      papas: 0
-      cebollas: 2
-      experiencia: 50
+      papas: 2
+      cebollas: 1
+      experiencia: 60
     - zanahorias: 8
       papas: 0
       cebollas: 2
       experiencia: 50
-    - zanahorias: 9
+    - zanahorias: 7
       papas: 0
-      cebollas: 4
-      experiencia: 50
+      cebollas: 0
+      experiencia: 45
     - zanahorias: 8
-      papas: 0
-      cebollas: 4
-      experiencia: 50
-    - zanahorias: 8
-      papas: 0
+      papas: 1
       cebollas: 3
+      experiencia: 60
+    - zanahorias: 8
+      papas: 0
+      cebollas: 2
       experiencia: 50
   - pedidos:
-    - zanahorias: 0
+    - zanahorias: 10
+      papas: 2
+      cebollas: 5
+      experiencia: 120
+    - zanahorias: 10
       papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-  - pedidos:
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
-    - zanahorias: 0
-      papas: 0
-      cebollas: 0
-      experiencia: 0
+      cebollas: 5
+      experiencia: 120
+    - zanahorias: 10
+      papas: 2
+      cebollas: 4
+      experiencia: 110
+    - zanahorias: 10
+      papas: 2
+      cebollas: 4
+      experiencia: 110
+    - zanahorias: 12
+      papas: 2
+      cebollas: 6
+      experiencia: 150
+    - zanahorias: 12
+      papas: 2
+      cebollas: 6
+      experiencia: 150
   - pedidos:
     - zanahorias: 12
       papas: 12
       cebollas: 4
-      experiencia: 40
+      experiencia: 200
     - zanahorias: 15
       papas: 10
       cebollas: 5
-      experiencia: 40
+      experiencia: 200
     - zanahorias: 20
       papas: 15
       cebollas: 3
-      experiencia: 70
+      experiencia: 200
     - zanahorias: 15
       papas: 10
       cebollas: 5
-      experiencia: 40
+      experiencia: 200
     - zanahorias: 17
       papas: 12
       cebollas: 5
-      experiencia: 40
+      experiencia: 200
     - zanahorias: 16
       papas: 13
       cebollas: 3
-      experiencia: 40
+      experiencia: 200

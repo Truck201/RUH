@@ -45,7 +45,7 @@ public class InputContextManager : MonoBehaviour
         // Primero desactivamos todos
         Inputs.Gameplay.Disable();
         Inputs.PauseMenu.Disable();
-        Inputs.Inventory.Disable();
+        Inputs.Tutorial.Disable();
         Inputs.Dialogue.Disable();
 
         // Activamos según el estado
@@ -59,9 +59,9 @@ public class InputContextManager : MonoBehaviour
                 Inputs.PauseMenu.Enable();
                 Debug.Log("Paused");
                 break;
-            case GameState.Inventory:
-                Inputs.Inventory.Enable();
-                Debug.Log("Inventory");
+            case GameState.Tutorial:
+                Inputs.Tutorial.Enable();
+                Debug.Log("Tutorial");
                 break;
             case GameState.Dialogue:
                 // 🔹 Durante el diálogo no habilitamos ningún mapa de input

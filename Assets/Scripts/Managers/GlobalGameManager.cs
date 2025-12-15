@@ -8,12 +8,13 @@ public class GlobalGameManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject pauseCanvas;
-    [SerializeField] private GameObject inventoryCanvas;
     [SerializeField] private GameObject generalCanvas;
 
     [Header("First Selected Objects")]
     [SerializeField] private GameObject firstPauseSelected;
-    [SerializeField] private GameObject firstInventorySelected;
+
+    [Header("Tutorial Canvas")]
+    [SerializeField] private GameObject canvasTutorial;
 
     [Header("Scene Filtering")]
     [SerializeField] private string[] ignoredScenes;
@@ -101,7 +102,6 @@ public class GlobalGameManager : MonoBehaviour
         if (IsIgnoredScene(scene.name))
         {
             if (pauseCanvas) pauseCanvas.SetActive(false);
-            if (inventoryCanvas) inventoryCanvas.SetActive(false);
             if (generalCanvas) generalCanvas.SetActive(true);
         }
 
@@ -131,7 +131,7 @@ public class GlobalGameManager : MonoBehaviour
             case GameState.Paused:
                 if (pauseCanvas) pauseCanvas.SetActive(true);
                 if (generalCanvas) generalCanvas.SetActive(false);
-                if (inventoryCanvas) inventoryCanvas.SetActive(false);
+                if (canvasTutorial) canvasTutorial.SetActive(false);
                 SetFirstSelected(firstPauseSelected);
 
                 if (SoundController.Instance != null)
@@ -139,17 +139,16 @@ public class GlobalGameManager : MonoBehaviour
 
                 break;
 
-            case GameState.Inventory:
+            case GameState.Tutorial:
                 if (pauseCanvas) pauseCanvas.SetActive(false);
                 if (generalCanvas) generalCanvas.SetActive(true);
-                if (inventoryCanvas) inventoryCanvas.SetActive(true);
-                SetFirstSelected(firstInventorySelected);
+                if (canvasTutorial) canvasTutorial.SetActive(true);
                 break;
 
             default:
                 if (pauseCanvas) pauseCanvas.SetActive(false);
                 if (generalCanvas) generalCanvas.SetActive(true);
-                if (inventoryCanvas) inventoryCanvas.SetActive(false);
+                if (canvasTutorial) canvasTutorial.SetActive(false);
                 SetFirstSelected(null);
                 break;
         }

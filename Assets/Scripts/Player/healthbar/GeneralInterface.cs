@@ -94,7 +94,7 @@ public class GeneralInterface : MonoBehaviour
 
         if (experienceText)
         {
-            var percent = playerStats.experiencia / playerStats.experienciaLevel * 100;
+            int percent = playerStats.experiencia / playerStats.experienciaLevel * 100;
             experienceText.SetText($"{percent}%");
         }
             

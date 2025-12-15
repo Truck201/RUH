@@ -121,6 +121,8 @@ public class RepairTrain : MonoBehaviour
         var uiManager = FindFirstObjectByType<DeliverUIManager>();
         if (uiManager != null)
             uiManager.MostrarPedidos();
+
+        PlayerStats.Instance.levelUP = true;
     }
     
     private void startRepaired()

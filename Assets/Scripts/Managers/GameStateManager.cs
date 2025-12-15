@@ -5,7 +5,7 @@ public enum GameState
 {
     Gameplay,
     Paused,
-    Inventory,
+    Tutorial,
     Cutscene,
     Dialogue
 }
